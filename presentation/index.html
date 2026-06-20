@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enigma - Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Anime.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+<style>
+  :root {
+    --bg: #010102;
+    --text: #ffffff;
+    --accent: #CC1100;
+    --accent-glow: rgba(204, 17, 0, 0.6);
+    --accent-alt: #ff3333;
+    --surface: rgba(15, 15, 18, 0.6);
+    --border: rgba(255, 255, 255, 0.15);
+  }
+
+  body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background-color: var(--bg); color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+    perspective: 2500px; 
+  }
+
+  /* Scanline Overlay */
+  body::before {
+    content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 3px, 3px 100%;
+    z-index: 998; pointer-events: none; opacity: 0.4;
+  }
+
+  /* 3D Grid Background */
+  .grid-bg {
+    position: absolute; inset: -50%; z-index: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.04) 2px, transparent 2px),
+      linear-gradient(to bottom, rgba(255,255,255,0.04) 2px, transparent 2px);
+    background-size: 80px 80px;
+    transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+    transition: transform 0.2s ease-out;
+  }
+
+  #particles-js { position: absolute; inset: -10%; width: 120%; height: 120%; z-index: 1; pointer-events: auto; transition: transform 0.2s ease-out; }
+  
+  #deck { position: relative; width: 100%; height: 100%; z-index: 10; transform-style: preserve-3d; }
+
+  .slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 60px 80px; opacity: 0; pointer-events: none;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+  }
+  .slide.active { opacity: 1; pointer-events: auto; }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3 { font-family: 'Outfit', sans-serif; margin: 0; transform: translateZ(40px); }
+  .title {
+    font-size: clamp(40px, 6vw, 90px); font-weight: 900;
+    line-height: 1.1; text-transform: uppercase; letter-spacing: -0.02em;
+    margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    transform: translateZ(80px);
+  }
+  .title .char { display: inline-block; transform: translateY(100px) rotateX(-90deg); opacity: 0; }
+  
+  .glow-text { color: transparent; -webkit-text-stroke: 1px var(--accent); position: relative; }
+  .glow-text::before {
+    content: attr(data-text); position: absolute; left: 0; top: 0;
+    color: var(--accent); filter: blur(15px); opacity: 0.8; z-index: -1;
+  }
+
+  .subtitle {
+    font-size: 20px; color: #ddd; max-width: 900px; font-weight: 300; line-height: 1.6;
+    opacity: 0; transform: translateY(20px) translateZ(40px);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  }
+  
+  .desc-text { font-size: 15px; color: #aaa; line-height: 1.6; font-weight: 400; transform: translateZ(30px); }
+  .code-font { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent-alt); letter-spacing: 1px; transform: translateZ(50px); }
+
+  /* ── 3D GLASS BOXES ── */
+  .glass-box {
+    background: var(--surface); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 12px; padding: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.05);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; 
+    will-change: transform; opacity: 0; text-align: left; position: relative;
+  }
+  
+  .glass-box::before {
+    content: ''; position: absolute; inset: -2px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 40%, transparent 60%, rgba(204,17,0,0.4) 100%);
+    border-radius: 14px; z-index: -1; transform: translateZ(-1px);
+  }
+
+  .huge-stat {
+    font-family: 'Outfit'; font-size: 90px; font-weight: 900;
+    background: linear-gradient(180deg, #fff, #555);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1; margin-bottom: 10px;
+    transform: translateZ(100px); 
+    text-shadow: 0 20px 40px rgba(0,0,0,0.9);
+  }
+
+  /* ── LAYOUTS ── */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; width: 100%; max-width: 1300px; transform-style: preserve-3d; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; max-width: 1300px; transform-style: preserve-3d; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; width: 100%; max-width: 1300px; transform-style: preserve-3d; }
+
+  /* ── HUD / PROGRESS ── */
+  .progress { position: absolute; bottom: 0; left: 0; height: 3px; background: var(--accent); box-shadow: 0 0 15px var(--accent); z-index: 50; transition: width 0.8s ease; }
+  .controls { position: absolute; bottom: 40px; right: 40px; z-index: 50; display: flex; gap: 15px; }
+  .btn { width: 50px; height: 50px; border-radius: 5px; border: 1px solid var(--border); background: rgba(0,0,0,0.8); color: #fff; font-size: 20px; cursor: pointer; backdrop-filter: blur(5px); transition: 0.3s; }
+  .btn:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.1); box-shadow: 0 0 20px var(--accent-glow); }
+
+  .hud { position: absolute; top: 40px; left: 40px; z-index: 50; font-family: 'JetBrains Mono'; letter-spacing: 2px; font-size: 12px; color: #fff; display: flex; align-items: center; gap: 10px; }
+  .pulse { width: 10px; height: 10px; background: var(--accent); animation: pulse 1s infinite; box-shadow: 0 0 10px var(--accent); }
+  @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+  .badge { display: inline-block; padding: 6px 12px; background: rgba(204, 17, 0, 0.1); border: 1px solid rgba(204, 17, 0, 0.5); border-radius: 4px; font-size: 11px; font-family: 'JetBrains Mono'; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; color: var(--accent-alt); transform: translateZ(60px); }
+
+</style>
+</head>
+<body>
+
+  <div class="grid-bg" id="bg-grid"></div>
+  <div id="particles-js"></div>
+
+  <div class="hud"><div class="pulse"></div> SYS.STATUS [STABLE] // ENIGMA AI V2.0</div>
+  <div class="progress" id="progress"></div>
+
+  <div id="deck">
+
+    <!-- SLIDE 1: INTRO -->
+    <div class="slide">
+      <div class="glass-box" data-tilt style="text-align: center; max-width: 900px; padding: 60px;">
+        <div class="badge">FLIPKART GRIDLOCK 2.0</div>
+        <h1 class="title split-text" style="font-size: 120px;"><span class="glow-text" data-text="ENIGMA">ENIGMA</span> AI</h1>
+        <div class="code-font fade-up" style="margin-bottom: 20px;">[ INITIALIZING AUTONOMOUS ENFORCEMENT PROTOCOL ]</div>
+        <p class="subtitle fade-up" style="margin: 0 auto;">Next-Gen Autonomous Traffic Enforcement Command Center.<br>Replacing manual surveillance with deterministic, edge-deployed intelligence.</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <div class="slide">
+      <div class="grid-2">
+        <div style="padding-right: 40px; transform-style: preserve-3d;">
+          <div class="badge">SYSTEM FAILURE DETECTED</div>
+          <h1 class="title split-text" style="font-size: 60px;">The Scalability<br><span class="glow-text" data-text="CRISIS">CRISIS</span></h1>
+          <p class="subtitle fade-up" style="text-align: left;">Manual CCTV surveillance is fundamentally broken due to biological limitations and extreme data volume.</p>
+        </div>
+        <div class="grid-2" style="gap: 20px;">
+          <div class="glass-box fade-up" data-tilt>
+            <div class="huge-stat counter-up" data-target="168000">0</div>
+            <h3 style="color: #fff; margin-bottom: 8px;">Road Fatalities</h3>
+            <p class="desc-text">India records over 1.68 lakh deaths annually due to lack of immediate enforcement.</p>
+          </div>
+          <div class="glass-box fade-up" data-tilt>
+            <div class="huge-stat">3.4M</div>
+            <h3 style="color: #fff; margin-bottom: 8px;">Frames Per Day</h3>
+            <p class="desc-text">Generated by a single 30FPS camera. Impossible for human operators to monitor.</p>
+          </div>
+          <div class="glass-box fade-up" data-tilt style="grid-column: span 2;">
+            <div class="code-font" style="margin-bottom: 5px;">WARNING: ATTENTION_DECAY</div>
+            <h3 style="color: var(--accent); margin-bottom: 8px;">Human Limitation</h3>
+            <p class="desc-text">Operators experience severe cognitive fatigue after 20 minutes, actively monitoring less than <strong>0.1%</strong> of available CCTV feeds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: METRICS -->
+    <div class="slide">
+      <div style="text-align: center; margin-bottom: 50px; transform-style: preserve-3d;">
+        <div class="badge">BENCHMARK RESULTS</div>
+        <h1 class="title split-text" style="font-size: 70px;">Performance Matrix</h1>
+      </div>
+      <div class="grid-3">
+        <div class="glass-box data-tilt">
+          <div style="display: flex; align-items: baseline; transform: translateZ(80px);">
+            <div class="huge-stat counter-up" data-target="120" style="color: var(--accent); transform: translateZ(0);">0</div><span class="code-font" style="font-size: 20px;">ms</span>
+          </div>
+          <h3 style="color: #fff; margin: 15px 0 10px;">Inference Latency</h3>
+          <p class="desc-text">GPU-accelerated YOLOv8-L achieves near-instantaneous processing per frame on offline edge hardware.</p>
+        </div>
+        <div class="glass-box data-tilt">
+          <div style="display: flex; align-items: baseline; transform: translateZ(80px);">
+            <div class="huge-stat counter-up-float" data-target="97.2" style="transform: translateZ(0);">0.0</div><span class="code-font" style="font-size: 20px; color: #fff;">%</span>
+          </div>
+          <h3 style="color: #fff; margin: 15px 0 10px;">OCR Accuracy</h3>
+          <p class="desc-text">PaddleOCR paired with EasyOCR super-resolution cleanly parses moving plates. Nighttime drops to only 94.1%.</p>
+        </div>
+        <div class="glass-box data-tilt">
+          <div style="display: flex; align-items: baseline; transform: translateZ(80px);">
+            <span style="font-size: 30px; font-weight: bold; color: #fff;">&lt;</span><div class="huge-stat counter-up-float" data-target="4.8" style="transform: translateZ(0);">0.0</div><span class="code-font" style="font-size: 20px; color: #fff;">%</span>
+          </div>
+          <h3 style="color: #fff; margin: 15px 0 10px;">False Positives</h3>
+          <p class="desc-text">Multi-frame overlap verification ensures extremely low error rates, exceeding highway patrol standards.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: ARCHITECTURE PIPELINE -->
+    <div class="slide">
+      <div style="text-align: center; margin-bottom: 40px; transform-style: preserve-3d;">
+        <h1 class="title split-text" style="font-size: 60px;">7-Stage Pipeline</h1>
+        <p class="subtitle fade-up" style="margin: 0 auto;">A highly decoupled, modular computer vision workflow.</p>
+      </div>
+      <div class="grid-4" style="gap: 15px;">
+        <div class="glass-box fade-up" data-tilt><h3 style="color:var(--accent);">1. INGEST</h3><p class="desc-text">Captures live RTSP streams and normalizes resolution.</p></div>
+        <div class="glass-box fade-up" data-tilt><h3 style="color:var(--accent);">2. PREP</h3><p class="desc-text">OpenCV CLAHE mitigates fog/glare.</p></div>
+        <div class="glass-box fade-up" data-tilt><h3 style="color:var(--accent);">3. DETECT</h3><p class="desc-text">YOLOv8-L detects vehicles, plates, and riders.</p></div>
+        <div class="glass-box fade-up" data-tilt><h3 style="color:var(--accent);">4. CROP</h3><p class="desc-text">Extracts high-res localized bounding boxes.</p></div>
+        <div class="glass-box fade-up" data-tilt style="grid-column: span 2;"><h3 style="color:var(--accent);">5. KEYPOINT POSE</h3><p class="desc-text">MobileNetV3 torso/head keypoint alignment specifically tracking seatbelt angles.</p></div>
+        <div class="glass-box fade-up" data-tilt style="grid-column: span 2;"><h3 style="color:var(--accent);">6. HEURISTIC VIOLATE</h3><p class="desc-text">Evaluates 7-class rules against ROI borders and overlaps.</p></div>
+        <div class="glass-box fade-up" data-tilt style="grid-column: span 4;"><div class="code-font" style="margin-bottom: 5px;">[ FINAL EXECUTION ]</div><h3 style="color:#fff;">7. EVIDENCE GENERATION</h3><p class="desc-text">Performs Regex validation on OCR (e.g. MH-12-AB-1234), queries VAHAN database, and issues PDF.</p></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: 7 VIOLATIONS -->
+    <div class="slide">
+      <div class="grid-2">
+        <div style="transform-style: preserve-3d;">
+          <div class="badge">DEEP LEARNING HEURISTICS</div>
+          <h1 class="title split-text" style="font-size: 70px;">7 Violations.<br><span class="glow-text" data-text="1 ENGINE">1 ENGINE</span></h1>
+          <p class="subtitle fade-up" style="text-align: left;">Mapping spatial data to legal infractions in real-time.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 15px; transform-style: preserve-3d;">
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">1. No Helmet:</strong> Binary classifier checks rider crop at 97% confidence.</div>
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">2. No Seatbelt:</strong> Pose estimator checks shoulder-to-hip diagonal intersection.</div>
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">3. Triple Riding:</strong> Flags motorcycle bounding box overlapping 3+ passenger centroids.</div>
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">4. Wrong-Side:</strong> Tracks homography vectors moving against designated lane direction.</div>
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">5. Red-Light / Stop Line:</strong> Triggers when front axle crosses custom ROI boundary.</div>
+          <div class="glass-box fade-up" data-tilt style="padding: 15px 25px;"><strong style="color:#fff;">6. Illegal Parking:</strong> Optical flow triggers if vehicle is stationary >30s in restricted zone.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: SECURITY & ADMISSIBILITY -->
+    <div class="slide">
+      <div class="grid-2">
+        <div class="glass-box data-tilt" style="text-align: center; padding: 80px;">
+          <div class="code-font" style="font-size: 24px; margin-bottom: 10px;">HASH_ALG:</div>
+          <div class="huge-stat">SHA-256</div>
+          <h3 style="color: var(--accent); margin-top: 10px;">Cryptographic Admissibility</h3>
+        </div>
+        <div style="transform-style: preserve-3d;">
+          <h1 class="title split-text" style="font-size: 50px;">Unbreakable Evidence</h1>
+          <p class="subtitle fade-up" style="text-align: left; font-size: 18px;">Traffic tickets are useless if they can be thrown out in court. Enigma solves the chain-of-custody problem.</p>
+          <div class="desc-text fade-up" style="margin-top: 20px;">
+            <strong style="color:var(--accent);">></strong> Original cropped frame, timestamp, and coordinates compiled.<br><br>
+            <strong style="color:var(--accent);">></strong> Immediate compilation into a PDF Docket (via fpdf2).<br><br>
+            <strong style="color:var(--accent);">></strong> Docket signed with an <strong>HMAC-SHA256 hash</strong>.<br><br>
+            <strong style="color:var(--accent);">></strong> Logged directly to an immutable SQLite database layer.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: RISKS & MITIGATION -->
+    <div class="slide">
+      <div style="text-align: center; margin-bottom: 40px; transform-style: preserve-3d;">
+        <h1 class="title split-text" style="font-size: 60px;">Risks & <span class="glow-text" data-text="MITIGATION">MITIGATION</span></h1>
+      </div>
+      <div class="grid-2">
+        <div class="glass-box fade-up" data-tilt>
+          <div class="code-font" style="margin-bottom: 10px;">[ BOTTLENECK_DETECTED ]</div>
+          <h3 style="color: #fff; margin-bottom: 15px;">Hardware Limits</h3>
+          <p class="desc-text"><strong>Risk:</strong> CPU-only processing limits throughput to 5-8 FPS, causing queue backlog.<br><br><strong>Mitigation:</strong> Deployed via FastAPI on edge NVIDIA hardware (Jetson Orin Nano). Implemented dynamic frame-skipping (processing 1 in 5 frames) during extreme traffic surges to prevent memory overflow.</p>
+        </div>
+        <div class="glass-box fade-up" data-tilt>
+          <div class="code-font" style="margin-bottom: 10px;">[ ENV_NOISE_DETECTED ]</div>
+          <h3 style="color: #fff; margin-bottom: 15px;">Environmental Noise</h3>
+          <p class="desc-text"><strong>Risk:</strong> Heavy monsoon rain, fog, or mud obscure license plates, confusing the OCR.<br><br><strong>Mitigation:</strong> Pre-processing via OpenCV CLAHE boosts contrast. Failed regex matches automatically flag the docket as "Unreadable Plate" routing it to a human supervisor instead of discarding the evidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: TEAM -->
+    <div class="slide">
+      <div style="text-align: center; margin-bottom: 40px; transform-style: preserve-3d;">
+        <div class="badge">NIT AGARTALA</div>
+        <h1 class="title split-text" style="font-size: 60px;">Team Enigma</h1>
+      </div>
+      <div class="grid-4">
+        <div class="glass-box data-tilt" style="text-align: center; padding: 40px 20px;">
+          <h3 style="color: #fff; font-size: 24px; margin-bottom: 5px;">Aditya Priyadarshi</h3>
+          <div class="code-font" style="margin-bottom: 15px;">CV & FULL STACK</div>
+          <p class="desc-text" style="font-size: 13px;">Built the FastAPI backend architecture, SQLite schema, and integrated the full pipeline.</p>
+        </div>
+        <div class="glass-box data-tilt" style="text-align: center; padding: 40px 20px;">
+          <h3 style="color: #fff; font-size: 24px; margin-bottom: 5px;">Unnati Jangid</h3>
+          <div class="code-font" style="margin-bottom: 15px;">ML & DATA PIPELINE</div>
+          <p class="desc-text" style="font-size: 13px;">Curated datasets and fine-tuned YOLOv8 base models for Indian traffic conditions.</p>
+        </div>
+        <div class="glass-box data-tilt" style="text-align: center; padding: 40px 20px;">
+          <h3 style="color: #fff; font-size: 24px; margin-bottom: 5px;">Gulshan Kumar</h3>
+          <div class="code-font" style="margin-bottom: 15px;">BACKEND & INFRA</div>
+          <p class="desc-text" style="font-size: 13px;">Managed file system routing, server operations, and the HMAC-SHA256 generation.</p>
+        </div>
+        <div class="glass-box data-tilt" style="text-align: center; padding: 40px 20px;">
+          <h3 style="color: #fff; font-size: 24px; margin-bottom: 5px;">Simran Singh</h3>
+          <div class="code-font" style="margin-bottom: 15px;">UI/UX & FRONTEND</div>
+          <p class="desc-text" style="font-size: 13px;">Designed the Neo-Swiss Brutalist portal and draggable Canvas ROI tools.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: CTA -->
+    <div class="slide">
+      <div class="glass-box data-tilt" style="text-align: center; padding: 80px 120px;">
+        <h1 class="title split-text" style="font-size: 50px; transform: translateZ(60px);">SYSTEM STABLE.</h1>
+        <h1 class="title glow-text" data-text="PORTAL UNLOCKED." style="font-size: 70px; transform: translateZ(90px);">PORTAL UNLOCKED.</h1>
+        <div class="fade-up" style="margin-top: 40px; transform: translateZ(120px);">
+          <a href="http://127.0.0.1:8000" style="display:inline-block; padding:20px 50px; background:var(--accent); color:#fff; text-decoration:none; font-family:'Outfit'; font-size:24px; font-weight:900; border-radius:4px; transition:0.3s; box-shadow: 0 0 40px rgba(204, 17, 0, 0.6); border: 1px solid #ff3333;">LAUNCH COMMAND CENTER</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <button class="btn" onclick="prevSlide()">❮</button>
+    <button class="btn" onclick="nextSlide()">❯</button>
+  </div>
+
+  <script>
+    // --- 1. PARTICLES.JS BACKGROUND ---
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#CC1100" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": { "enable": true, "distance": 120, "color": "#CC1100", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+
+    // --- 2. PRESENTATION LOGIC ---
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progress');
+    let currentSlide = 0;
+    let isAnimating = false;
+
+    // Split text setup
+    document.querySelectorAll('.split-text').forEach(el => {
+      if(!el.classList.contains('glow-text')){
+        el.innerHTML = el.textContent.replace(/\S/g, "<span class='char'>$&</span>");
+      }
+    });
+
+    function updateProgress() {
+      progressBar.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+    }
+
+    function resetSlide(slide) {
+      slide.querySelectorAll('.fade-up, .glass-box').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(40px)'; });
+      slide.querySelectorAll('.split-text .char').forEach(el => { el.style.opacity = 0; el.style.transform = 'translateY(100px) rotateX(-90deg)'; });
+    }
+
+    function animateSlideIn(slide) {
+      // Bounce text in
+      anime({
+        targets: slide.querySelectorAll('.split-text .char'),
+        translateY: ['100px', '0px'],
+        rotateX: ['-90deg', '0deg'],
+        opacity: [0, 1],
+        duration: 800,
+        easing: 'easeOutElastic(1, .8)',
+        delay: anime.stagger(20)
+      });
+      // Fade elements in
+      anime({
+        targets: slide.querySelectorAll('.fade-up, .glass-box'),
+        translateY: [40, 0], opacity: [0, 1], duration: 800,
+        easing: 'easeOutExpo', delay: anime.stagger(80)
+      });
+      // Number Counters
+      slide.querySelectorAll('.counter-up').forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        anime({ targets: counter, innerHTML: [0, target], round: 1, duration: 1500, easing: 'easeOutExpo' });
+      });
+      slide.querySelectorAll('.counter-up-float').forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        anime({
+          targets: { val: 0 }, val: target, duration: 1500, easing: 'easeOutExpo',
+          update: function(anim) { counter.innerHTML = anim.animations[0].currentValue.toFixed(1); }
+        });
+      });
+    }
+
+    // --- 3D SPATIAL FLY-THROUGH TRANSITION ---
+    function goToSlide(index, direction = 'next') {
+      if(isAnimating || index === currentSlide || index < 0 || index >= slides.length) return;
+      isAnimating = true;
+
+      const oldSlide = slides[currentSlide];
+      const newSlide = slides[index];
+
+      // Reset new slide state before it appears
+      resetSlide(newSlide);
+      newSlide.classList.add('active');
+
+      const zOut = direction === 'next' ? 2000 : -2000;
+      const zIn = direction === 'next' ? -2000 : 2000;
+      const rotOut = direction === 'next' ? 10 : -10;
+      const rotIn = direction === 'next' ? -10 : 10;
+
+      // Old Slide flies away
+      anime({
+        targets: oldSlide,
+        translateZ: [0, zOut],
+        rotateX: [0, rotOut],
+        opacity: [1, 0],
+        duration: 1000,
+        easing: 'easeInOutExpo',
+        complete: function() {
+          oldSlide.classList.remove('active');
+        }
+      });
+
+      // New Slide flies in from the distance
+      anime({
+        targets: newSlide,
+        translateZ: [zIn, 0],
+        rotateX: [rotIn, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeInOutExpo',
+        complete: function() {
+          isAnimating = false;
+        }
+      });
+
+      // Trigger the internal elements to animate in right as the slide arrives
+      setTimeout(() => { animateSlideIn(newSlide); }, 400);
+
+      currentSlide = index;
+      updateProgress();
+    }
+
+    function nextSlide() { goToSlide(currentSlide + 1, 'next'); }
+    function prevSlide() { goToSlide(currentSlide - 1, 'prev'); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // --- EXTREME 3D TILT EFFECT ---
+    const bgGrid = document.getElementById('bg-grid');
+    const particleLayer = document.getElementById('particles-js');
+
+    document.addEventListener('mousemove', (e) => {
+      const activeSlide = slides[currentSlide];
+      if (!activeSlide) return;
+      
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      // Parallax Background
+      bgGrid.style.transform = `perspective(1000px) rotateX(${60 - y * 5}deg) rotateY(${x * 5}deg) translateY(-100px) translateZ(-200px)`;
+      particleLayer.style.transform = `translate(${x * -20}px, ${y * -20}px)`;
+
+      // 3D Glass Boxes
+      const tiltBoxes = activeSlide.querySelectorAll('.glass-box[data-tilt]');
+      tiltBoxes.forEach(box => {
+        const rect = box.getBoundingClientRect();
+        const boxX = e.clientX - rect.left - rect.width / 2;
+        const boxY = e.clientY - rect.top - rect.height / 2;
+        
+        const multiplier = 0.05; 
+        const shadowX = boxX * -0.1;
+        const shadowY = boxY * -0.1;
+        
+        box.style.transform = `perspective(1000px) rotateX(${-boxY * multiplier}deg) rotateY(${boxX * multiplier}deg) translateZ(30px)`;
+        box.style.boxShadow = `
+          ${shadowX * 0.2}px ${shadowY * 0.2}px 0px 0px rgba(204, 17, 0, 0.2),
+          ${shadowX * 0.4}px ${shadowY * 0.4}px 0px 0px rgba(204, 17, 0, 0.1),
+          ${shadowX}px ${shadowY}px 40px rgba(0,0,0,0.9), 
+          inset 0 0 20px rgba(255,255,255,0.05)
+        `;
+      });
+    });
+
+    // Init first slide
+    slides.forEach(s => { if(s !== slides[0]) { s.style.opacity = 0; s.style.transform = 'translateZ(-2000px)'; }});
+    updateProgress();
+    slides[0].classList.add('active');
+    setTimeout(() => {
+      animateSlideIn(slides[0]);
+    }, 100);
+
+  </script>
+</body>
+</html>

@@ -9,6 +9,9 @@
   <a href="https://phantom-ghost-11101.github.io/enigma-traffic-ai/frontend/">
     <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Launch_Portal-CC1100?style=for-the-badge&labelColor=100C0A" alt="Live Demo"/>
   </a>
+  <a href="https://youtu.be/w2mLQaTaKIQ">
+    <img src="https://img.shields.io/badge/🎥_VIDEO_PITCH-Watch_on_YouTube-FF0000?style=for-the-badge&labelColor=100C0A&logo=youtube&logoColor=white" alt="Video Pitch"/>
+  </a>
 </p>
 
 <p align="center">
