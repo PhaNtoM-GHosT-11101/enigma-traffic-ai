@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from ultralytics import YOLO
-from paddleocr import PaddleOCR
+import easyocr
 import re
 import uuid
 import datetime
@@ -14,15 +14,14 @@ from pdf_generator import generate_pdf
 model_det = YOLO('yolov8n.pt')       # full-frame vehicle/person detection
 model_pose = YOLO('yolov8n-pose.pt') # body keypoints for seatbelt check
 
-# For helmet: use general YOLOv8 on head crop — any person detected in head crop
-# without a "helmet" shape is flagged. We detect via skin-exposure heuristic
-# combined with face detection (if face is very visible = no helmet).
+# EasyOCR reader (CPU mode, English)
+reader = easyocr.Reader(['en'], gpu=False)
+
+# Haar cascades for face/helmet detection
 face_cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(face_cascade_path)
 profile_cascade_path = cv2.data.haarcascades + 'haarcascade_profileface.xml'
 profile_cascade = cv2.CascadeClassifier(profile_cascade_path)
-
-ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 # ─── Helmet Detection via computer vision heuristic ──────────────────────────
 def check_helmet_cv(head_crop):
@@ -54,21 +53,17 @@ def check_helmet_cv(head_crop):
     # Signal 3: dark region at top (helmets are usually dark/opaque)
     top_quarter = head_crop[:h//3, :]
     top_gray = cv2.cvtColor(top_quarter, cv2.COLOR_BGR2GRAY)
-    top_darkness = np.mean(top_gray)  # helmets are darker on top
+    top_darkness = np.mean(top_gray)
 
     # Decision logic
     if face_detected and skin_ratio > 0.15:
-        # Clear face + skin visible => no helmet
         conf = min(0.95, 0.65 + skin_ratio)
         return True, round(conf, 2)
     elif skin_ratio > 0.30:
-        # Lots of skin even without face detection
         return True, round(0.60 + skin_ratio * 0.5, 2)
     elif face_detected and top_darkness > 150:
-        # Face found but bright top region => no dark helmet
         return True, 0.70
     else:
-        # Likely wearing helmet
         return False, 0.0
 
 
@@ -199,8 +194,8 @@ def process_pipeline(image_path, config):
                 if r.keypoints is not None and len(r.keypoints.xy) > 0:
                     kpts = r.keypoints.xy[0].cpu().numpy()
                     if len(kpts) >= 12:
-                        ls, rs = kpts[5], kpts[6]   # left/right shoulder
-                        lh, rh = kpts[11], kpts[12] # left/right hip
+                        ls, rs = kpts[5], kpts[6]
+                        lh, rh = kpts[11], kpts[12]
                         if ls[0] > 0 and rh[0] > 0:
                             seatbelt_present = True
 
@@ -214,7 +209,6 @@ def process_pipeline(image_path, config):
     lane_divider_x = config.get('lane_divider_x', -1)
     no_park_polys  = config.get('no_parking_polygons', [])
 
-    # Check if signal is red
     sx1, sy1, sx2, sy2 = signal_roi
     sig_crop = orig_img[sy1:sy2, sx1:sx2]
     is_red_light = False
@@ -234,7 +228,7 @@ def process_pipeline(image_path, config):
 
         detected_violations = []
 
-        # 1. Helmet check (motorcycles only) — real CV detection
+        # 1. Helmet check (motorcycles only)
         if v_class == 3 and v['head_crop'] is not None:
             is_viol, conf = check_helmet_cv(v['head_crop'])
             if is_viol and conf >= 0.60:
@@ -276,15 +270,14 @@ def process_pipeline(image_path, config):
                 'plate_crop': v['plate_crop'],
             })
 
-    # ─── Stage 7: OCR, Evidence Generation & Storage ─────────────────────────
+    # ─── Stage 7: OCR (EasyOCR), Evidence Generation & Storage ──────────────
     annotated_img = orig_img.copy()
     case_id = str(uuid.uuid4())[:8].upper()
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Watermark timestamp
-    cv2.putText(annotated_img, f"GRIDLOCK AI  |  {timestamp}  |  Case: {case_id}",
+    cv2.putText(annotated_img, f"ENIGMA AI  |  {timestamp}  |  Case: {case_id}",
                 (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 2)
-    cv2.putText(annotated_img, f"GRIDLOCK AI  |  {timestamp}  |  Case: {case_id}",
+    cv2.putText(annotated_img, f"ENIGMA AI  |  {timestamp}  |  Case: {case_id}",
                 (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 1)
 
     all_results = []
@@ -292,18 +285,20 @@ def process_pipeline(image_path, config):
     for viol in violations:
         plate_text = "UNKNOWN"
         if viol['plate_crop'] is not None and viol['plate_crop'].size > 0:
-            ocr_res = ocr.ocr(viol['plate_crop'])
-            if ocr_res and ocr_res[0]:
-                raw_text = "".join([line[1][0] for line in ocr_res[0]])
-                match = re.search(r'[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}', raw_text.replace(" ", "").upper())
-                plate_text = match.group(0) if match else raw_text.strip() or "UNKNOWN"
+            try:
+                ocr_results = reader.readtext(viol['plate_crop'])
+                if ocr_results:
+                    raw_text = " ".join([res[1] for res in ocr_results])
+                    match = re.search(r'[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}', raw_text.replace(" ", "").upper())
+                    plate_text = match.group(0) if match else raw_text.strip() or "UNKNOWN"
+            except Exception:
+                plate_text = "UNKNOWN"
 
         x1, y1, x2, y2 = viol['vehicle_bbox']
         viol_types = [v['type'] for v in viol['violations']]
         viol_confs = [v['confidence'] for v in viol['violations']]
         primary_color = viol['violations'][0]['color']
 
-        # Draw box per violation
         cv2.rectangle(annotated_img, (x1, y1), (x2, y2), primary_color, 3)
 
         label_y = y1 - 10
@@ -314,7 +309,6 @@ def process_pipeline(image_path, config):
             cv2.putText(annotated_img, label, (x1 + 2, label_y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 2)
             label_y -= (lh + 8)
 
-        # Plate text below bbox
         cv2.putText(annotated_img, f"PLATE: {plate_text}", (x1, y2 + 22),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, primary_color, 2)
 

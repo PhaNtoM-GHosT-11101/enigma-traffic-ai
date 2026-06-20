@@ -37,3 +37,31 @@ def insert_violation(db_path, data):
     ))
     conn.commit()
     conn.close()
+
+def get_all_violations(db_path="traffic.db"):
+    """Return all violation records as a list of dicts, newest first."""
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT id, timestamp, plate_number, violation_types, confidence_scores,
+               vehicle_class, camera_location_tag, pdf_path
+        FROM violations
+        ORDER BY timestamp DESC
+        LIMIT 100
+    ''')
+    rows = cursor.fetchall()
+    conn.close()
+    result = []
+    for row in rows:
+        result.append({
+            'id': row['id'],
+            'timestamp': row['timestamp'],
+            'plate_number': row['plate_number'],
+            'violation_types': json.loads(row['violation_types']),
+            'confidence_scores': json.loads(row['confidence_scores']),
+            'vehicle_class': row['vehicle_class'],
+            'camera_location_tag': row['camera_location_tag'],
+            'pdf_path': row['pdf_path'],
+        })
+    return result

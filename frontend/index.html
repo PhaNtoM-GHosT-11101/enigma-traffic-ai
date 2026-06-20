@@ -523,7 +523,58 @@ section{position:relative;}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 
 /* ━━━ ANALYSIS LAB ━━━ */
-#analysis { background: var(--ink); color: var(--paper); border-bottom: var(--rule-fat); padding: 80px 0; }
+#analysis { background: var(--ink); color: var(--paper); border-bottom: var(--rule-fat); padding: 80px 0; position: relative; }
+
+/* Pipeline progress rail */
+.pipeline-rail { display:flex; flex-direction:column; gap:0; border:1px solid rgba(240,237,229,.08); margin-bottom:24px; background:rgba(240,237,229,.02); }
+.pr-stage { display:flex; align-items:center; gap:16px; padding:10px 18px; border-bottom:1px solid rgba(240,237,229,.05); transition:.3s; }
+.pr-stage:last-child { border-bottom:none; }
+.pr-dot { width:8px; height:8px; border-radius:50%; border:1px solid rgba(240,237,229,.2); flex-shrink:0; transition:.4s; }
+.pr-stage.done .pr-dot { background:var(--red); border-color:var(--red); box-shadow:0 0 8px rgba(204,17,0,.6); }
+.pr-stage.running .pr-dot { background:var(--yellow); border-color:var(--yellow); animation:livepulse 0.7s ease-in-out infinite; }
+.pr-label { font-family:var(--fm); font-size:9px; letter-spacing:.1em; color:rgba(240,237,229,.3); flex:1; transition:.3s; }
+.pr-stage.done .pr-label { color:rgba(240,237,229,.8); }
+.pr-stage.running .pr-label { color:var(--yellow); }
+.pr-time { font-family:var(--fm); font-size:8px; color:rgba(240,237,229,.2); }
+.pr-stage.done .pr-time { color:rgba(240,237,229,.4); }
+
+/* Preprocessing stats cards */
+.preproc-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(240,237,229,.08); border:1px solid rgba(240,237,229,.08); margin-bottom:20px; }
+.preproc-card { background:var(--ink); padding:14px 12px; }
+.preproc-val { font-family:var(--fh); font-size:18px; font-weight:900; color:var(--paper); letter-spacing:-.02em; }
+.preproc-val.active { color:var(--yellow); }
+.preproc-lbl { font-family:var(--fm); font-size:8px; letter-spacing:.1em; color:rgba(240,237,229,.3); margin-top:4px; text-transform:uppercase; }
+
+/* Mode indicator badge */
+.mode-badge { font-family:var(--fm); font-size:9px; letter-spacing:.15em; padding:4px 12px; border:1px solid rgba(240,237,229,.15); color:rgba(240,237,229,.4); display:inline-flex; align-items:center; gap:6px; }
+.mode-badge.live-mode { border-color:rgba(0,204,102,.4); color:#00CC66; }
+.mode-badge.live-mode .mode-dot { background:#00CC66; }
+.mode-badge.mock-mode { border-color:rgba(245,197,24,.3); color:var(--yellow); }
+.mode-badge.mock-mode .mode-dot { background:var(--yellow); }
+.mode-dot { width:5px; height:5px; border-radius:50%; background:rgba(240,237,229,.3); }
+
+/* Before/After split viewer */
+.split-slider-wrap { position:absolute; inset:0; z-index:25; pointer-events:none; }
+.split-slider-wrap.active { pointer-events:auto; }
+.split-divider { position:absolute; top:0; bottom:0; width:3px; background:rgba(240,237,229,.8); cursor:ew-resize; z-index:26; transform:translateX(-50%); box-shadow:0 0 12px rgba(240,237,229,.4); }
+.split-handle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:28px; height:28px; border-radius:50%; background:var(--paper); border:2px solid var(--red); display:flex; align-items:center; justify-content:center; font-family:var(--fm); font-size:10px; color:var(--red); }
+.split-before { position:absolute; inset:0; overflow:hidden; z-index:20; }
+.split-before img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.split-before-label { position:absolute; top:8px; left:8px; font-family:var(--fm); font-size:8px; letter-spacing:.1em; background:rgba(16,12,10,.8); color:rgba(240,237,229,.7); padding:2px 8px; z-index:2; }
+.split-after-label { position:absolute; top:8px; right:8px; font-family:var(--fm); font-size:8px; letter-spacing:.1em; background:rgba(204,17,0,.8); color:var(--paper); padding:2px 8px; z-index:26; }
+
+/* Evidence log section */
+#evidence-log-section { background:var(--ink); border-top:var(--rule-fat); padding:60px 0; }
+.ev-log-head { font-family:var(--fh); font-size:clamp(24px,3vw,42px); font-weight:900; color:var(--paper); letter-spacing:-.03em; margin-bottom:4px; }
+.ev-log-table { width:100%; border-collapse:collapse; font-family:var(--fm); font-size:10px; }
+.ev-log-table th { text-align:left; padding:8px 12px; border-bottom:1px solid rgba(240,237,229,.15); color:rgba(240,237,229,.4); letter-spacing:.1em; font-weight:400; }
+.ev-log-table td { padding:10px 12px; border-bottom:1px solid rgba(240,237,229,.05); color:rgba(240,237,229,.7); vertical-align:middle; }
+.ev-log-table tr:hover td { background:rgba(240,237,229,.03); }
+.ev-vtype { display:inline-block; background:rgba(204,17,0,.15); border:1px solid rgba(204,17,0,.3); color:var(--red); padding:1px 6px; letter-spacing:.08em; font-size:8px; }
+.ev-pdf-link { color:var(--yellow); text-decoration:none; border:1px solid rgba(245,197,24,.3); padding:2px 8px; font-size:8px; transition:.2s; }
+.ev-pdf-link:hover { background:rgba(245,197,24,.1); }
+.ev-log-empty { font-family:var(--fm); font-size:10px; color:rgba(240,237,229,.2); text-align:center; padding:40px; letter-spacing:.1em; }
+.ev-log-status { font-family:var(--fm); font-size:9px; color:rgba(240,237,229,.3); letter-spacing:.1em; margin-bottom:16px; }
 #analysis .eyebrow { color: rgba(240,237,229,.35); }
 #analysis .sec-head { color: var(--paper); }
 .lab-intro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 20px; }
@@ -1031,6 +1082,8 @@ section{position:relative;}
 
 <!-- ANALYSIS LAB -->
 <section id="analysis" aria-labelledby="analysis-head">
+  <!-- Mode Badge -->
+  <div style="position:absolute;top:24px;right:0;" class="wrap"><div class="inner" style="display:flex;justify-content:flex-end;"><div class="mode-badge mock-mode" id="mode-badge"><div class="mode-dot"></div><span id="mode-text">MOCK SCANNER — START SERVER FOR LIVE AI</span></div></div></div>
   <div class="wrap"><div class="inner">
     <span class="eyebrow">// 000 &mdash; LIVE DETECTION DEMO &mdash; REAL FRAME ANALYSIS</span>
     <div class="lab-intro">
@@ -1041,17 +1094,38 @@ section{position:relative;}
       </div>
     </div>
 
-    <!-- Filter tabs and Configuration Toggle -->
-    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:var(--rule-thin); margin-bottom: 20px; flex-wrap:wrap; gap:10px; width:100%;">
-      <div class="ftabs" role="tablist" aria-label="Detection filter modes" style="border-bottom:none; margin-bottom:0;">
-        <button class="ftab active" data-filter="raw"     role="tab" aria-selected="true">RAW FEED <span class="ftab-chip">LIVE</span></button>
-        <button class="ftab"        data-filter="thermal" role="tab" aria-selected="false">THERMAL</button>
-        <button class="ftab"        data-filter="edge"    role="tab" aria-selected="false">EDGE DETECT</button>
-        <button class="ftab"        data-filter="night"   role="tab" aria-selected="false">NIGHT VISION</button>
+    <!-- Pipeline Progress Rail + Filter Tabs -->
+    <div style="display:grid;grid-template-columns:1fr 220px;gap:24px;margin-bottom:24px;align-items:start;">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:var(--rule-thin);margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+          <div class="ftabs" role="tablist" aria-label="Detection filter modes" style="border-bottom:none;margin-bottom:0;">
+            <button class="ftab active" data-filter="raw"     role="tab" aria-selected="true">RAW FEED <span class="ftab-chip">LIVE</span></button>
+            <button class="ftab"        data-filter="thermal" role="tab" aria-selected="false">THERMAL</button>
+            <button class="ftab"        data-filter="edge"    role="tab" aria-selected="false">EDGE DETECT</button>
+            <button class="ftab"        data-filter="night"   role="tab" aria-selected="false">NIGHT VISION</button>
+          </div>
+          <button id="cfg-toggle-btn" class="hud-btn" style="border:1px solid rgba(240,237,229,.2);color:rgba(240,237,229,.6);padding:8px 16px;font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:none;background:transparent;">
+            ⚙️ ROI CONFIG
+          </button>
+        </div>
+        <!-- Preprocessing stats row -->
+        <div class="preproc-row" id="preproc-row">
+          <div class="preproc-card"><div class="preproc-val" id="pp-brightness">---</div><div class="preproc-lbl">BRIGHTNESS</div></div>
+          <div class="preproc-card"><div class="preproc-val" id="pp-blur">---</div><div class="preproc-lbl">BLUR VAR</div></div>
+          <div class="preproc-card"><div class="preproc-val" id="pp-clahe">---</div><div class="preproc-lbl">CLAHE EQNHM</div></div>
+          <div class="preproc-card"><div class="preproc-val" id="pp-sharp">---</div><div class="preproc-lbl">SHARPENING</div></div>
+        </div>
       </div>
-      <button id="cfg-toggle-btn" class="hud-btn" style="border:1px solid rgba(240,237,229,.2); color:rgba(240,237,229,.6); padding:8px 16px; font-family:var(--fm); font-size:10px; letter-spacing:.12em; text-transform:uppercase; cursor:none; background:transparent; margin-bottom: 12px;">
-        ⚙️ ROI CONFIG
-      </button>
+      <!-- 7-Stage Pipeline Progress Rail -->
+      <div class="pipeline-rail" id="pipeline-rail">
+        <div class="pr-stage" id="prs-1"><div class="pr-dot"></div><span class="pr-label">1 — INGEST</span><span class="pr-time" id="prt-1"></span></div>
+        <div class="pr-stage" id="prs-2"><div class="pr-dot"></div><span class="pr-label">2 — PREPROCESS</span><span class="pr-time" id="prt-2"></span></div>
+        <div class="pr-stage" id="prs-3"><div class="pr-dot"></div><span class="pr-label">3 — YOLOV8 DETECT</span><span class="pr-time" id="prt-3"></span></div>
+        <div class="pr-stage" id="prs-4"><div class="pr-dot"></div><span class="pr-label">4 — CROP REGIONS</span><span class="pr-time" id="prt-4"></span></div>
+        <div class="pr-stage" id="prs-5"><div class="pr-dot"></div><span class="pr-label">5 — POSE ESTIMATE</span><span class="pr-time" id="prt-5"></span></div>
+        <div class="pr-stage" id="prs-6"><div class="pr-dot"></div><span class="pr-label">6 — VIOLATION ENGINE</span><span class="pr-time" id="prt-6"></span></div>
+        <div class="pr-stage" id="prs-7"><div class="pr-dot"></div><span class="pr-label">7 — OCR + EVIDENCE</span><span class="pr-time" id="prt-7"></span></div>
+      </div>
     </div>
 
     <!-- ROI Configuration Panel -->
@@ -1107,7 +1181,18 @@ section{position:relative;}
         </div>
 
 
-        <img src="traffic.png" alt="Traffic intersection for AI analysis" id="traffic-img"/>
+        <!-- Before/After split view (activates after upload) -->
+        <div class="split-slider-wrap" id="split-wrap">
+          <div class="split-before" id="split-before" style="width:50%;">
+            <img id="before-img" src="" alt="Original" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"/>
+            <div class="split-before-label">ORIGINAL</div>
+          </div>
+          <div class="split-divider" id="split-divider" style="left:50%;">
+            <div class="split-handle">⇔</div>
+          </div>
+          <div class="split-after-label">AI ANNOTATED</div>
+        </div>
+        <img src="/frontend/traffic.png" onerror="this.src='traffic.png'" alt="Traffic intersection for AI analysis" id="traffic-img"/>
 
         <!-- ── Bounding boxes (positioned over key vehicles in image) ── -->
         <!-- Motorcycle cluster bottom-center: triple riding + no helmet -->
@@ -1317,6 +1402,37 @@ section{position:relative;}
 
       </div><!-- /results-panel -->
     </div><!-- /lab-main -->
+  </div></div>
+</section>
+
+<!-- EVIDENCE LOG -->
+<section id="evidence-log-section">
+  <div class="wrap"><div class="inner">
+    <span class="eyebrow">// 00X &mdash; SESSION EVIDENCE LOG &mdash; REAL-TIME DATABASE</span>
+    <div class="lab-intro" style="margin-bottom:24px;">
+      <div class="ev-log-head">EVIDENCE LOG</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+        <div class="lab-badge"><div class="lab-badge-dot"></div>DATABASE LIVE &mdash; AUTO-REFRESH 10s</div>
+      </div>
+    </div>
+    <div class="ev-log-status" id="ev-log-status">AWAITING FIRST SCAN &mdash; UPLOAD AN IMAGE TO BEGIN LOGGING</div>
+    <div id="ev-log-container">
+      <div class="ev-log-empty" id="ev-log-empty">// NO RECORDS YET — RUN A SCAN TO POPULATE THE EVIDENCE DATABASE</div>
+      <table class="ev-log-table" id="ev-log-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>CASE ID</th>
+            <th>TIMESTAMP</th>
+            <th>PLATE</th>
+            <th>VEHICLE</th>
+            <th>VIOLATIONS</th>
+            <th>CAMERA</th>
+            <th>EVIDENCE</th>
+          </tr>
+        </thead>
+        <tbody id="ev-log-body"></tbody>
+      </table>
+    </div>
   </div></div>
 </section>
 
@@ -2188,6 +2304,109 @@ function initAnalysisLab() {
     });
   }
 
+  // ── Health check: auto-switch mode badge ──
+  async function checkServerMode() {
+    try {
+      const r = await fetch('/health', { signal: AbortSignal.timeout(2000) });
+      if (r.ok) {
+        const badge = document.getElementById('mode-badge');
+        const modeText = document.getElementById('mode-text');
+        if (badge) { badge.className = 'mode-badge live-mode'; }
+        if (modeText) modeText.textContent = 'LIVE AI MODEL — YOLOV8 + EASYOCR ACTIVE';
+      }
+    } catch(e) {}
+  }
+  checkServerMode();
+  setInterval(checkServerMode, 15000);
+
+  // ── Pipeline progress rail helpers ──
+  function resetPipelineRail() {
+    for(let i=1;i<=7;i++) {
+      const s = document.getElementById('prs-'+i);
+      const t = document.getElementById('prt-'+i);
+      if(s) s.className = 'pr-stage';
+      if(t) t.textContent = '';
+    }
+  }
+  function advancePipelineStage(stage, ms) {
+    const prev = document.getElementById('prs-'+(stage-1));
+    if(prev) { prev.className = 'pr-stage done'; const pt = document.getElementById('prt-'+(stage-1)); if(pt) pt.textContent = ms+'ms'; }
+    const cur = document.getElementById('prs-'+stage);
+    if(cur) cur.className = 'pr-stage running';
+  }
+  function finishPipelineRail(ms) {
+    const prev = document.getElementById('prs-7');
+    if(prev) { prev.className = 'pr-stage done'; const pt = document.getElementById('prt-7'); if(pt) pt.textContent = ms+'ms'; }
+  }
+
+  // ── Evidence Log ──
+  async function refreshEvidenceLog() {
+    try {
+      const r = await fetch('/violations', { signal: AbortSignal.timeout(3000) });
+      if (!r.ok) return;
+      const data = await r.json();
+      const rows = data.violations || [];
+      const empty = document.getElementById('ev-log-empty');
+      const table = document.getElementById('ev-log-table');
+      const tbody = document.getElementById('ev-log-body');
+      const status = document.getElementById('ev-log-status');
+      if (!tbody) return;
+      if (rows.length === 0) {
+        if(empty) empty.style.display = 'block';
+        if(table) table.style.display = 'none';
+        return;
+      }
+      if(empty) empty.style.display = 'none';
+      if(table) table.style.display = 'table';
+      if(status) status.textContent = `SHOWING ${rows.length} SESSION RECORD${rows.length!==1?'S':''} — LAST UPDATED ${new Date().toLocaleTimeString()}`;
+      tbody.innerHTML = rows.map(row => {
+        const vtypes = (row.violation_types||[]).map(t => `<span class="ev-vtype">${t.toUpperCase()}</span>`).join(' ');
+        const pdfLink = row.pdf_path ? `<a href="/download/${row.pdf_path}" target="_blank" class="ev-pdf-link">PDF ↗</a>` : '<span style="color:rgba(240,237,229,.2)">—</span>';
+        return `<tr>
+          <td style="font-family:var(--fh);font-weight:900;color:var(--red);">${row.id}</td>
+          <td>${row.timestamp}</td>
+          <td style="font-family:var(--fh);font-weight:700;color:var(--paper);">${row.plate_number||'UNKNOWN'}</td>
+          <td>${(row.vehicle_class||'vehicle').toUpperCase()}</td>
+          <td>${vtypes}</td>
+          <td style="color:rgba(240,237,229,.4);">${row.camera_location_tag||'—'}</td>
+          <td>${pdfLink}</td>
+        </tr>`;
+      }).join('');
+    } catch(e) {}
+  }
+  refreshEvidenceLog();
+  setInterval(refreshEvidenceLog, 10000);
+
+  // ── Before/After split slider ──
+  function initSplitSlider(beforeDataUrl) {
+    const wrap = document.getElementById('split-wrap');
+    const beforePanel = document.getElementById('split-before');
+    const divider = document.getElementById('split-divider');
+    const beforeImg = document.getElementById('before-img');
+    const viewer = document.getElementById('img-viewer');
+    if (!wrap || !beforePanel || !divider || !beforeImg) return;
+    beforeImg.src = beforeDataUrl;
+    wrap.className = 'split-slider-wrap active';
+    beforePanel.style.width = '50%';
+    divider.style.left = '50%';
+
+    let dragging = false;
+    divider.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+    window.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      const rect = viewer.getBoundingClientRect();
+      let pct = ((e.clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(5, Math.min(95, pct));
+      beforePanel.style.width = pct + '%';
+      divider.style.left = pct + '%';
+    });
+    window.addEventListener('mouseup', () => { dragging = false; });
+  }
+  function hideSplitSlider() {
+    const wrap = document.getElementById('split-wrap');
+    if (wrap) wrap.className = 'split-slider-wrap';
+  }
+
   // ── Custom Image Upload and Scanner Logic ──
   const uploadBtn = document.getElementById('upload-btn');
   const fileInput = document.getElementById('file-input');
@@ -2205,12 +2424,14 @@ function initAnalysisLab() {
 
       playChirp('tick');
 
-      // Update image source locally
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        trafficImg.src = event.target.result;
-      };
-      reader.readAsDataURL(file);
+      // Capture original image for before/after
+      const origDataUrl = await new Promise(res => {
+        const fr = new FileReader();
+        fr.onload = ev => res(ev.target.result);
+        fr.readAsDataURL(file);
+      });
+      trafficImg.src = origDataUrl;
+      hideSplitSlider();
 
       // Hide all standard overlays and boxes
       document.querySelectorAll('.abox').forEach(box => {
@@ -2219,22 +2440,28 @@ function initAnalysisLab() {
         box.style.pointerEvents = 'none';
       });
 
+      // Animate pipeline stages while waiting
+      resetPipelineRail();
+      const stageTimings = [80, 140, 600, 80, 300, 120, 400];
+      let elapsed = 0;
+      for (let i = 1; i <= 7; i++) {
+        ((stage, delay) => {
+          setTimeout(() => advancePipelineStage(stage, stageTimings[stage-2]||0), delay);
+        })(i, elapsed);
+        elapsed += stageTimings[i-1];
+      }
+
       // UI Scanning State
       const scanLine = document.querySelector('.a-scan');
-      if (scanLine) {
-        scanLine.style.animationDuration = '1.2s';
-      }
-      
+      if (scanLine) scanLine.style.animationDuration = '1.2s';
+
       const rTargetsEl = document.getElementById('radar-targets');
       if (rTargetsEl) rTargetsEl.textContent = 'SCANNING...';
 
       const evHash = document.getElementById('ev-hash');
       if (evHash) evHash.textContent = 'GENERATING CHAIN...';
       const evProg = document.getElementById('ev-prog');
-      if (evProg) {
-        evProg.style.transition = 'none';
-        evProg.style.width = '0%';
-      }
+      if (evProg) { evProg.style.transition = 'none'; evProg.style.width = '0%'; }
 
       // Build config payload
       const stopLineSlider = document.getElementById('cfg-stop-line');
@@ -2261,13 +2488,30 @@ function initAnalysisLab() {
         if (response.ok) {
           const data = await response.json();
           if (data.status === 'success') {
+            finishPipelineRail(stageTimings.reduce((a,b)=>a+b,0));
+            // Show before/after split
             trafficImg.src = data.annotated_image;
+            initSplitSlider(origDataUrl);
+
             if (scanLine) scanLine.style.animationDuration = '2.8s';
 
             const stats = data.stats || {};
             const preproc = stats.preprocessing || {};
             const violations = data.violations || [];
             const violCount = violations.length;
+
+            // Preprocessing stats
+            const ppBright = document.getElementById('pp-brightness');
+            const ppBlur = document.getElementById('pp-blur');
+            const ppClahe = document.getElementById('pp-clahe');
+            const ppSharp = document.getElementById('pp-sharp');
+            if(ppBright) { ppBright.textContent = preproc.mean_brightness ?? '---'; }
+            if(ppBlur) { ppBlur.textContent = preproc.blur_variance ?? '---'; }
+            if(ppClahe) { ppClahe.textContent = preproc.clahe_applied ? 'YES' : 'NO'; ppClahe.className = preproc.clahe_applied ? 'preproc-val active' : 'preproc-val'; }
+            if(ppSharp) { ppSharp.textContent = preproc.sharpening_applied ? 'YES' : 'NO'; ppSharp.className = preproc.sharpening_applied ? 'preproc-val active' : 'preproc-val'; }
+
+            // Refresh evidence log after scan
+            setTimeout(refreshEvidenceLog, 800);
 
             const vsNumR = document.getElementById('vcount');
             const vsNumG = document.getElementById('ccount');
