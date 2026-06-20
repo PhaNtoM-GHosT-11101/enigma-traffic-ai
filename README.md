@@ -2,11 +2,11 @@
 ### 🚦 Next-Gen Autonomous Traffic Enforcement Command Center
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:100C0A,50:CC1100,100:100C0A&height=220&section=header&text=ENIGMA%20AI&fontSize=70&fontAlignY=35&desc=Traffic%20Violation%20Command%20Portal%20%E2%80%94%20Gridlock%202.0&descAlignY=55&descSize=16&animation=twinkling" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=10,100C0A,50,CC1100,90,100C0A&height=220&section=header&text=ENIGMA%20AI&fontSize=70&fontAlignY=35&desc=Traffic%20Violation%20Command%20Portal%20%E2%80%94%20Gridlock%202.0&descAlignY=55&descSize=16&animation=twinkling" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=22&duration=2000&pause=500&color=CC1100&center=true&vCenter=true&width=650&lines=7+VIOLATIONS+%E2%80%A2+1+UNIFIED+PORTAL;120ms+REAL-TIME+INFERENCE;97.25%25+ACCURATE+LICENSE+PLATE+OCR;HMAC-SHA256+COURT-ADMISSIBLE+DOCKETS;NEO-SWISS+BRUTALIST+UI+%E2%80%94+ZERO+BLOAT" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=24&duration=2000&pause=500&color=CC1100&center=true&vCenter=true&width=700&lines=7+VIOLATIONS+%E2%80%A2+1+UNIFIED+PORTAL;120ms+REAL-TIME+INFERENCE;97.25%25+ACCURATE+LICENSE+PLATE+OCR;HMAC-SHA256+COURT-ADMISSIBLE+DOCKETS;NEO-SWISS+BRUTALIST+UI+%E2%80%94+ZERO+BLOAT" alt="Typing SVG"/>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@ Built for the **Flipkart Gridlock Hackathon 2.0**, **ENIGMA** (codename *Vigilan
 
 ---
 
-## ── 👥 THE TEAM ENIGMA
+## ── 👤 THE TEAM ENIGMA
 We are **Team Enigma**, representing the **National Institute of Technology Agartala**.
 
 | Team Member | Role | Core Focus | GitHub / Contact |
@@ -110,6 +110,14 @@ We are **Team Enigma**, representing the **National Institute of Technology Agar
 7. 🚫 **Illegal Parking**: Optical flow calculates stationary status. Triggers ticket if vehicle remains stationary in a restricted zone for > 30s.
 
 </details>
+
+---
+
+## ── 🖥️ LIVE TELEMETRY SIMULATION (BOOT SEQUENCE)
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=F5C518&center=true&vCenter=true&width=550&lines=INITIATING+SYSTEM+BOOT...;LOADING+YOLOv8-L+WEIGHTS...;SPINNING+UP+FASTAPI+SERVER...;ESTABLISHING+SECURE+DATABASE+CHANNELS...;CAMERA+ROUTING+ACTIVE%3A+CAM-04B+%26+CAM-12A;SYSTEMS+STABLE.+PORTAL+UNLOCKED." alt="Typing SVG"/>
+</p>
 
 ---
 
@@ -208,7 +216,7 @@ pytest -s -v tests/test_dashboard.py
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=shark&color=100C0A&height=120&section=footer&text=ENIGMA%20AI%20%E2%80%A2%20SAFETY%20FIRST&fontSize=25&fontAlignY=55" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=shark&color=gradient&height=140&section=footer&text=ENIGMA%20AI%20%E2%80%A2%20SAFETY%20FIRST&fontSize=25&fontAlignY=60&animation=twinkling" width="100%"/>
 </p>
 
 <p align="center">
