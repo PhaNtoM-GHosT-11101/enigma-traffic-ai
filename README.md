@@ -4,7 +4,10 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=20&duration=2500&pause=100&color=FF6F00&center=true&vCenter=true&width=600&lines=7+VIOLATIONS+%7C+1+FRAMEWORK+%7C+ZERO+COMPROMISE;120ms+INFERENCE+%7C+97.25%25+OCR+%7C+99.99%25+UPTIME;YOLOv8-L+%7C+FastAPI+%7C+PaddleOCR+%7C+Neo-Swiss+UI;BUILT+FOR+GRIDLOCK+HACKATHON+2.0+%E2%80%94+FLIPKART" alt="Typing SVG"/>
+  <strong><code>7 VIOLATIONS | 1 FRAMEWORK | ZERO COMPROMISE</code></strong><br>
+  <strong><code>120ms INFERENCE | 97.25% OCR | 99.99% UPTIME</code></strong><br>
+  <strong><code>YOLOv8-L | FastAPI | PaddleOCR | Neo-Swiss UI</code></strong><br>
+  <strong><code>BUILT FOR GRIDLOCK HACKATHON 2.0 — FLIPKART</code></strong>
 </p>
 
 <br>
@@ -34,7 +37,9 @@
 <table>
   <tr>
     <td width="38%" align="center">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=26&duration=2500&pause=500&color=FF6F00&center=true&vCenter=true&width=380&lines=THE+ENIGMA+UNIT;OPERATION+GRIDLOCK;VIGILANCE+AI;ENSLAVE+TRAFFIC" alt="Typing SVG"/>
+      <strong><code>THE ENIGMA UNIT</code></strong><br>
+      <strong><code>OPERATION GRIDLOCK</code></strong><br>
+      <strong><code>VIGILANCE AI</code></strong>
       <br><br>
       <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="90%">
       <br>
@@ -89,7 +94,9 @@
 ## 🚦 THE SEVEN VIOLATIONS
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=FF1744&center=true&vCenter=true&width=500&lines=DETECTED+IN+%3C120ms+PER+FRAME;7+CLASSES+%7C+%3C4.8%25+FALSE+POSITIVES;HMAC-SHA256+SIGNED+EVIDENCE" alt="Typing SVG"/>
+  <strong><code>DETECTED IN &lt;120ms PER FRAME</code></strong><br>
+  <strong><code>7 CLASSES | &lt;4.8% FALSE POSITIVES</code></strong><br>
+  <strong><code>HMAC-SHA256 SIGNED EVIDENCE</code></strong>
 </p>
 
 <br>
@@ -135,7 +142,7 @@
 ## 🏗️ SYSTEM ARCHITECTURE
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=14&duration=3000&pause=1000&color=00E676&center=true&vCenter=true&width=600&lines=STREAM+%F0%9F%94%80+%E2%86%92+BACKEND+%E2%98%9C%EF%B8%8F+%E2%86%92+PIPELINE+%F0%9F%94%AC+%E2%86%92+OCR+%F0%9F%93%9C+%E2%86%92+EVIDENCE+%F0%9F%94%90+%E2%86%92+DASHBOARD+%F0%9F%96%A5%EF%B8%8F" alt="Typing SVG"/>
+  <strong><code>STREAM 🎥 → BACKEND ⚙️ → PIPELINE 🔬 → OCR 📜 → EVIDENCE 🔐 → DASHBOARD 🖥️</code></strong>
 </p>
 
 <pre align="center">
@@ -174,25 +181,15 @@
 
 ## 🔬 THE 7-STAGE CV PIPELINE
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=18&duration=2000&pause=500&color=FF6F00&center=true&vCenter=true&width=700&lines=STAGE+1+%E2%86%92+STAGE+2+%E2%86%92+STAGE+3+%E2%86%92+STAGE+4+%E2%86%92+STAGE+5+%E2%86%92+STAGE+6+%E2%86%92+STAGE+7;INGEST+%E2%86%92+CLAHE+%E2%86%92+YOLOv8+%E2%86%92+CROP+%E2%86%92+POSE+%E2%86%92+VIOLATION+%E2%86%92+OCR%2FPDF" alt="Typing SVG"/>
-</p>
-
-<p align="center">
-  <img src="https://progress-bar.dev/100?width=800&color=FF6F00&text=STAGE+1&suffix=%E2%80%82%E2%80%82INGEST+%E2%80%BA+Capture+%26+normalize+camera+streams"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=2979FF&text=STAGE+2&suffix=%E2%80%82%E2%80%82CLAHE+%E2%80%BA+Contrast-Limited+Adaptive+Histogram+Equalization+%2B+deblur"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=00E676&text=STAGE+3&suffix=%E2%80%82%E2%80%82YOLOv8-L+%E2%80%BA+Vehicle%2C+Rider%2C+Pedestrian+detection"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=FFD600&text=STAGE+4&suffix=%E2%80%82%E2%80%82CROP+%26+EXTRACT+%E2%80%BA+Isolate+plates%2C+heads%2C+torsos"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=FF1744&text=STAGE+5&suffix=%E2%80%82%E2%80%82POSE+%26+FACES+%E2%80%BA+Keypoint+estimation+for+helmet+%2B+seatbelt"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=9C27B0&text=STAGE+6&suffix=%E2%80%82%E2%80%82VIOLATION+ENGINE+%E2%80%BA+7-class+violation+detection"/>
-  <br>
-  <img src="https://progress-bar.dev/100?width=800&color=FF6F00&text=STAGE+7&suffix=%E2%80%82%E2%80%82OCR+%26+REPORT+%E2%80%BA+Super-res+OCR+%E2%86%92+VAHAN+%E2%86%92+Signed+PDF"/>
-</p>
+```
+⚡ STAGE 1 — INGEST        ████████████████████████████████████████  Capture & normalize camera streams
+⚡ STAGE 2 — CLAHE         ████████████████████████████████████████  Contrast-Limited Adaptive Histogram Equalization + deblur
+⚡ STAGE 3 — YOLOv8-L      ████████████████████████████████████████  Vehicle, Rider, Pedestrian detection
+⚡ STAGE 4 — CROP & EXTRACT ████████████████████████████████████████  Isolate plates, heads, torsos
+⚡ STAGE 5 — POSE & FACES   ████████████████████████████████████████  Keypoint estimation for helmet + seatbelt
+⚡ STAGE 6 — VIOLATIONS     ████████████████████████████████████████  7-class violation engine
+⚡ STAGE 7 — OCR & REPORT   ████████████████████████████████████████  Super-res OCR → VAHAN → Signed PDF
+```
 
 <br>
 
@@ -202,13 +199,13 @@
 
 | # | Violation | Method | Detection Logic | Confidence |
 |:-:|:----------|:-------|:----------------|:----------:|
-| 1 | **🪖 Helmet Non-Compliance** | MobileNetV3 classifier | Head-crop classification → confidence threshold | <img src="https://progress-bar.dev/97?width=50&color=FF6F00"/> |
-| 2 | **🔗 Seatbelt Violation** | Pose diagonal detection | Torso keypoint line intersection with belt zone | <img src="https://progress-bar.dev/94?width=50&color=2979FF"/> |
-| 3 | **🛵 Triple Riding** | Centroid overlap | Rider + 2+ passenger bounding box centroid proximity | <img src="https://progress-bar.dev/92?width=50&color=00E676"/> |
-| 4 | **↩️ Wrong-Side Driving** | Homography vectors | Coordinate vector direction vs lane orientation | <img src="https://progress-bar.dev/95?width=50&color=FF1744"/> |
-| 5 | **🛑 Stop-Line Violation** | Axle-Y boundary | Axle overlap of configurable Y-axis threshold line | <img src="https://progress-bar.dev/96?width=50&color=FFD600"/> |
-| 6 | **🔴 Red-Light Running** | Signal ROI entry | Vehicle entry during signal ROI red phase | <img src="https://progress-bar.dev/93?width=50&color=CC1100"/> |
-| 7 | **🚫 Illegal Parking** | Optical flow | Stationary duration exceeding parking threshold | <img src="https://progress-bar.dev/88?width=50&color=9C27B0"/> |
+| 1 | 🪖 **Helmet Non-Compliance** | MobileNetV3 classifier | Head-crop classification → confidence threshold | **97%** |
+| 2 | 🔗 **Seatbelt Violation** | Pose diagonal detection | Torso keypoint line intersection with belt zone | **94%** |
+| 3 | 🛵 **Triple Riding** | Centroid overlap | Rider + 2+ passenger bounding box centroid proximity | **92%** |
+| 4 | ↩️ **Wrong-Side Driving** | Homography vectors | Coordinate vector direction vs lane orientation | **95%** |
+| 5 | 🛑 **Stop-Line Violation** | Axle-Y boundary | Axle overlap of configurable Y-axis threshold line | **96%** |
+| 6 | 🔴 **Red-Light Running** | Signal ROI entry | Vehicle entry during signal ROI red phase | **93%** |
+| 7 | 🚫 **Illegal Parking** | Optical flow | Stationary duration exceeding parking threshold | **88%** |
 
 </details>
 
@@ -223,7 +220,9 @@
 > *"Where editorial print meets surveillance command centers."*
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=FFD600&center=true&vCenter=true&width=600&lines=%22THE+DASHBOARD+IS+THE+PRODUCT%22;CREAM+PAPER+%C2%B7+DEEP+INK+%C2%B7+ALARM+RED+%C2%B7+WARNING+YELLOW;NEVER+DARK+MODE.+ALWAYS+EDITORIAL." alt="Typing SVG"/>
+  <strong><code>"THE DASHBOARD IS THE PRODUCT"</code></strong><br>
+  <strong><code>CREAM PAPER · DEEP INK · ALARM RED · WARNING YELLOW</code></strong><br>
+  <strong><code>NEVER DARK MODE. ALWAYS EDITORIAL.</code></strong>
 </p>
 
 ### 🎭 Color Palette
@@ -263,7 +262,8 @@
 ## 🚀 GETTING STARTED
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=00E676&center=true&vCenter=true&width=500&lines=3+COMMANDS.+ZERO+FUSS.;DEPLOY+IN+UNDER+60+SECONDS" alt="Typing SVG"/>
+  <strong><code>3 COMMANDS. ZERO FUSS.</code></strong><br>
+  <strong><code>DEPLOY IN UNDER 60 SECONDS</code></strong>
 </p>
 
 ### 📋 Prerequisites
@@ -305,7 +305,8 @@ Then open **http://localhost:8000** in your browser.
 ## 🧪 TESTING — 82 E2E CHECKS
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=16&duration=2000&pause=500&color=2979FF&center=true&vCenter=true&width=500&lines=PLAYWRIGHT+%2B+PYTEST+%3D+%F0%9F%94%A5;EVERY+COMMIT.+EVERY+EDGE+CASE." alt="Typing SVG"/>
+  <strong><code>PLAYWRIGHT + PYTEST = 🔥</code></strong><br>
+  <strong><code>EVERY COMMIT. EVERY EDGE CASE.</code></strong>
 </p>
 
 ```bash
@@ -328,7 +329,8 @@ pytest -s -v tests/test_dashboard.py
 ## 🛠️ TECH STACK
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=14&duration=2000&pause=500&color=FF6F00&center=true&vCenter=true&width=500&lines=POWERED+BY+THE+BEST;MODERN+AI+%2B+MODERN+WEB+%2B+ZERO+BLOAT" alt="Typing SVG"/>
+  <strong><code>POWERED BY THE BEST</code></strong><br>
+  <strong><code>MODERN AI + MODERN WEB + ZERO BLOAT</code></strong>
 </p>
 
 <br>
@@ -358,7 +360,8 @@ pytest -s -v tests/test_dashboard.py
 ## 📂 PROJECT STRUCTURE
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=14&duration=2000&pause=500&color=2979FF&center=true&vCenter=true&width=400&lines=KNOW+YOUR+CODEBASE;CLEAN.+MODULAR.+MEAN." alt="Typing SVG"/>
+  <strong><code>KNOW YOUR CODEBASE</code></strong><br>
+  <strong><code>CLEAN. MODULAR. MEAN.</code></strong>
 </p>
 
 ```
