@@ -15,6 +15,14 @@
   <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-traffic-ai/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-F5C518?style=for-the-badge&labelColor=100C0A&logoColor=100C0A"/></a>
 </p>
 
+<p align="center">
+  <img src="https://api.visitorbadge.io/api/visitors?path=PhaNtoM-GHosT-11101%2Fenigma-traffic-ai&label=visitors&countColor=%23cc1100&labelColor=%23100c0a&style=flat-square"/>
+  <img src="https://img.shields.io/github/repo-size/PhaNtoM-GHosT-11101/enigma-traffic-ai?style=flat-square&labelColor=100C0A&color=CC1100&label=size"/>
+  <img src="https://img.shields.io/github/stars/PhaNtoM-GHosT-11101/enigma-traffic-ai?style=flat-square&labelColor=100C0A&color=F5C518&label=stars"/>
+  <img src="https://img.shields.io/github/forks/PhaNtoM-GHosT-11101/enigma-traffic-ai?style=flat-square&labelColor=100C0A&color=CC1100&label=forks"/>
+  <img src="https://img.shields.io/github/issues/PhaNtoM-GHosT-11101/enigma-traffic-ai?style=flat-square&labelColor=100C0A&color=F5C518&label=issues"/>
+</p>
+
 ---
 
 ## ── ⚡ THE MISSION Brief
