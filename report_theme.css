@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    padding: 60px 40px !important;
+    line-height: 1.7 !important;
+}
+
+h1 {
+    color: #000000 !important;
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.5px;
+    border: none;
+    margin-bottom: 8px;
+}
+
+h2 {
+    color: #111111 !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.3px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 12px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #333333 !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    margin-top: 30px;
+}
+
+p, li {
+    font-size: 15px !important;
+    color: #444444 !important;
+    font-weight: 400 !important;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+
+hr {
+    border: none !important;
+    border-top: 1px solid #eaeaea !important;
+    margin: 50px 0 !important;
+}
+
+.title-page {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0;
+    background-color: #fafafa;
+    border-radius: 12px;
+}
+
+.title-page h1 {
+    font-size: 42px !important;
+    margin-bottom: 10px;
+}
+
+.title-page p {
+    font-size: 18px !important;
+    color: #666666 !important;
+    font-weight: 300 !important;
+}

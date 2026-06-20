@@ -6,11 +6,18 @@
 </p>
 
 <p align="center">
+  <a href="https://youtu.be/w2mLQaTaKIQ" target="_blank">
+    <img src="https://img.youtube.com/vi/w2mLQaTaKIQ/maxresdefault.jpg" alt="Watch the Pitch Video" width="800" style="border-radius:15px; border: 2px solid #CC1100; box-shadow: 0 0 20px rgba(204, 17, 0, 0.5);"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>▶️ CLICK ABOVE TO WATCH THE OFFICIAL PITCH & DEMO (by Unnati Jangid)</b>
+</p>
+
+<p align="center">
   <a href="https://phantom-ghost-11101.github.io/enigma-traffic-ai/frontend/">
     <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Launch_Portal-CC1100?style=for-the-badge&labelColor=100C0A" alt="Live Demo"/>
-  </a>
-  <a href="https://youtu.be/w2mLQaTaKIQ">
-    <img src="https://img.shields.io/badge/🎥_VIDEO_PITCH-Watch_on_YouTube-FF0000?style=for-the-badge&labelColor=100C0A&logo=youtube&logoColor=white" alt="Video Pitch"/>
   </a>
 </p>
 
