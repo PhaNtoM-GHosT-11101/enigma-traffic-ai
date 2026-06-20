@@ -22,7 +22,6 @@
   <img src="https://img.shields.io/github/last-commit/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=github&color=FF6F00&label=LAST%20UPDATE"/>
   <img src="https://img.shields.io/github/repo-size/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=files&color=2979FF&label=SIZE"/>
   <img src="https://img.shields.io/github/stars/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=star&color=FFD600&label=STARS"/>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=PhaNtoM-GHosT-11101.enigma-gridlock&format=true&style=for-the-badge"/>
 </p>
 
 <br>
@@ -40,8 +39,6 @@
       <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="90%">
       <br>
       <sub><strong>GRIDLOCK HACKATHON 2.0 × FLIPKART</strong></sub>
-      <br><br>
-      <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=PhaNtoM-GHosT-11101&theme=default" width="90%">
     </td>
     <td width="62%">
       <table>
@@ -97,47 +94,10 @@
 
 <br>
 
-<p align="center">
-  <table>
-    <tr>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/motorbike-helmet.png"/><br>
-        <strong>🪖 No Helmet</strong><br>
-        <img src="https://progress-bar.dev/97?width=80&color=FF6F00&text=MobileNetV3"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/seatbelt.png"/><br>
-        <strong>🔗 No Seatbelt</strong><br>
-        <img src="https://progress-bar.dev/94?width=80&color=2979FF&text=Pose+DIAG"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/motorbike.png"/><br>
-        <strong>🛵 Triple Ride</strong><br>
-        <img src="https://progress-bar.dev/92?width=80&color=00E676&text=Centroid"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/no-left-turn.png"/><br>
-        <strong>↩️ Wrong Side</strong><br>
-        <img src="https://progress-bar.dev/95?width=80&color=FF1744&text=Homography"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/stop-sign.png"/><br>
-        <strong>🛑 Stop-Line</strong><br>
-        <img src="https://progress-bar.dev/96?width=80&color=FFD600&text=Axle-Y"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/traffic-light.png"/><br>
-        <strong>🔴 Red-Light</strong><br>
-        <img src="https://progress-bar.dev/93?width=80&color=CC1100&text=Signal+ROI"/>
-      </td>
-      <td align="center" width="14%">
-        <img src="https://img.icons8.com/fluency/48/000000/parking.png"/><br>
-        <strong>🚫 Illeg. Park</strong><br>
-        <img src="https://progress-bar.dev/88?width=80&color=9C27B0&text=Flow"/>
-      </td>
-    </tr>
-  </table>
-</p>
+| 🪖 No Helmet | 🔗 No Seatbelt | 🛵 Triple Ride | ↩️ Wrong Side | 🛑 Stop-Line | 🔴 Red-Light | 🚫 Illeg. Park |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| MobileNetV3 | Pose DIAG | Centroid | Homography | Axle-Y | Signal ROI | Flow |
+| 97% | 94% | 92% | 95% | 96% | 93% | 88% |
 
 <br>
 
@@ -145,43 +105,15 @@
 
 ## 📊 SYSTEM DASHBOARD
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=PhaNtoM-GHosT-11101&repo=enigma-gridlock&theme=radical&cache_seconds=1800&show_owner=true" width="49%"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PhaNtoM-GHosT-11101&layout=compact&theme=radical&hide_border=true&cache_seconds=1800" width="49%"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PhaNtoM-GHosT-11101&theme=chartreuse-dark&hide_border=true&area=true&bg_color=0D1117" width="95%"/>
-</p>
-
 <br>
 
 ---
 
 ## ⚡ SYSTEM SPECS
 
-<p align="center">
-  <table>
-    <tr>
-      <td align="center" width="25%">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=32&duration=1000&pause=500&color=00E676&center=true&vCenter=true&width=120&lines=120;ms" width="100%"><br>
-        <sub>Inference Latency</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=32&duration=1000&pause=500&color=2979FF&center=true&vCenter=true&width=120&lines=97.2;%25" width="100%"><br>
-        <sub>OCR Accuracy (Day)</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=32&duration=1000&pause=500&color=FF1744&center=true&vCenter=true&width=120&lines=%3C4.8;%25" width="100%"><br>
-        <sub>False Positive Rate</sub>
-      </td>
-      <td align="center" width="25%">
-        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=32&duration=1000&pause=500&color=00E676&center=true&vCenter=true&width=120&lines=99.99;%25" width="100%"><br>
-        <sub>Uptime Target</sub>
-      </td>
-    </tr>
-  </table>
-</p>
+| ⏱️ **120ms** | 👁️ **97.2%** | 🎯 **<4.8%** | ⚡ **99.99%** |
+|:---:|:---:|:---:|:---:|
+| Inference Latency | OCR Accuracy (Day) | False Positive Rate | Uptime Target |
 
 | Metric | Value | Status |
 |:-------|:------|:-------|
