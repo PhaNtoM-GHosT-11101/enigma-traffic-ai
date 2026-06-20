@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  <a href="https://phantom-ghost-11101.github.io/enigma-traffic-ai/frontend/">
+    <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Launch_Portal-CC1100?style=for-the-badge&labelColor=100C0A" alt="Live Demo"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=24&duration=2000&pause=500&color=CC1100&center=true&vCenter=true&width=700&lines=7+VIOLATIONS+%E2%80%A2+1+UNIFIED+PORTAL;120ms+REAL-TIME+INFERENCE;97.25%25+ACCURATE+LICENSE+PLATE+OCR;HMAC-SHA256+COURT-ADMISSIBLE+DOCKETS;NEO-SWISS+BRUTALIST+UI+%E2%80%94+ZERO+BLOAT" alt="Typing SVG"/>
 </p>
 
