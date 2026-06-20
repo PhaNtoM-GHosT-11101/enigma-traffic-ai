@@ -1,417 +1,217 @@
+# ⚡ E N I G M A  :  V I G I L A N C E   A I
+### 🚦 Next-Gen Autonomous Traffic Enforcement Command Center
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=shark&color=gradient&height=250&section=header&text=ENIGMA%20VIGILANCE%20AI&fontSize=52&fontAlignY=30&animation=twinkling&desc=Traffic%20Enforcement%20Command%20%26%20Control%20%E2%80%94%20Gridlock%202.0&descAlignY=55&descAlign=50" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:100C0A,50:CC1100,100:100C0A&height=220&section=header&text=ENIGMA%20AI&fontSize=70&fontAlignY=35&desc=Traffic%20Violation%20Command%20Portal%20%E2%80%94%20Gridlock%202.0&descAlignY=55&descSize=16&animation=twinkling" width="100%"/>
 </p>
 
 <p align="center">
-  <strong><code>7 VIOLATIONS | 1 FRAMEWORK | ZERO COMPROMISE</code></strong><br>
-  <strong><code>120ms INFERENCE | 97.25% OCR | 99.99% UPTIME</code></strong><br>
-  <strong><code>YOLOv8-L | FastAPI | PaddleOCR | Neo-Swiss UI</code></strong><br>
-  <strong><code>BUILT FOR GRIDLOCK HACKATHON 2.0 — FLIPKART</code></strong>
-</p>
-
-<br>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Inference-%3C120ms-00E676?style=for-the-badge&logo=rocket&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/OCR-97.2%25-2979FF?style=for-the-badge&logo=tesseract&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/FPR-%3C4.8%25-FF1744?style=for-the-badge&logo=target&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/Uptime-99.99%25-00E676?style=for-the-badge&logo=uptime&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/YOLOv8--L-FF6F00?style=for-the-badge&logo=yolo&logoColor=white&labelColor=1a1a2e"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=22&duration=2000&pause=500&color=CC1100&center=true&vCenter=true&width=650&lines=7+VIOLATIONS+%E2%80%A2+1+UNIFIED+PORTAL;120ms+REAL-TIME+INFERENCE;97.25%25+ACCURATE+LICENSE+PLATE+OCR;HMAC-SHA256+COURT-ADMISSIBLE+DOCKETS;NEO-SWISS+BRUTALIST+UI+%E2%80%94+ZERO+BLOAT" alt="Typing SVG"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/last-commit/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=github&color=FF6F00&label=LAST%20UPDATE"/>
-  <img src="https://img.shields.io/github/repo-size/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=files&color=2979FF&label=SIZE"/>
-  <img src="https://img.shields.io/github/stars/PhaNtoM-GHosT-11101/enigma-gridlock?style=for-the-badge&logo=star&color=FFD600&label=STARS"/>
+  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-traffic-ai"><img src="https://img.shields.io/badge/Repository-enigma--traffic--ai-100C0A?style=for-the-badge&logo=github&labelColor=100C0A&color=CC1100"/></a>
+  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-traffic-ai/actions"><img src="https://img.shields.io/badge/Build-passing-00E676?style=for-the-badge&logo=github-actions&labelColor=100C0A"/></a>
+  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-traffic-ai/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-F5C518?style=for-the-badge&labelColor=100C0A&logoColor=100C0A"/></a>
 </p>
-
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header"/>
-</p>
-
-<!-- TEAM SECTION -->
-<table>
-  <tr>
-    <td width="38%" align="center">
-      <strong><code>THE ENIGMA UNIT</code></strong><br>
-      <strong><code>OPERATION GRIDLOCK</code></strong><br>
-      <strong><code>VIGILANCE AI</code></strong>
-      <br><br>
-      <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="90%">
-      <br>
-      <sub><strong>GRIDLOCK HACKATHON 2.0 × FLIPKART</strong></sub>
-    </td>
-    <td width="62%">
-      <table>
-        <tr>
-          <th align="left">🕵️ Agent</th>
-          <th align="left">⚡ Role</th>
-          <th align="left">🎯 Focus</th>
-        </tr>
-        <tr>
-          <td><strong>Aditya Priyadarshi</strong></td>
-          <td>CV & Full Stack</td>
-          <td>Pipeline integration & Backend architecture</td>
-        </tr>
-        <tr>
-          <td><strong>Unnati Jangid</strong></td>
-          <td>ML & Data Pipeline</td>
-          <td>YOLOv8 training & dataset pipelines</td>
-        </tr>
-        <tr>
-          <td><strong>Gulshan Kumar</strong></td>
-          <td>Backend & Infra</td>
-          <td>Database integration & server infrastructure</td>
-        </tr>
-        <tr>
-          <td><strong>Simran Singh</strong></td>
-          <td>Frontend & Dashboard</td>
-          <td>Neo-Swiss Brutalist dashboard UI</td>
-        </tr>
-      </table>
-      <br>
-      <details>
-        <summary><strong>📜 THE BRIEF</strong></summary>
-        <br>
-        <blockquote>
-          <em>"ENIGMA (codename Vigilance AI) is a high-fidelity, autonomous traffic violation detection and evidence logging command center. Built for the Gridlock Hackathon 2.0 (Flipkart), the system processes high-resolution traffic cameras to detect seven violation categories, execute license plate OCR, cross-reference VAHAN registries, and issue cryptographically signed, court-admissible evidence dockets — all within <strong>120ms per frame</strong>."</em>
-        </blockquote>
-      </details>
-    </td>
-  </tr>
-</table>
-
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 🚦 THE SEVEN VIOLATIONS
-
-<p align="center">
-  <strong><code>DETECTED IN &lt;120ms PER FRAME</code></strong><br>
-  <strong><code>7 CLASSES | &lt;4.8% FALSE POSITIVES</code></strong><br>
-  <strong><code>HMAC-SHA256 SIGNED EVIDENCE</code></strong>
-</p>
-
-<br>
-
-| 🪖 No Helmet | 🔗 No Seatbelt | 🛵 Triple Ride | ↩️ Wrong Side | 🛑 Stop-Line | 🔴 Red-Light | 🚫 Illeg. Park |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| MobileNetV3 | Pose DIAG | Centroid | Homography | Axle-Y | Signal ROI | Flow |
-| 97% | 94% | 92% | 95% | 96% | 93% | 88% |
-
-<br>
 
 ---
 
-## 📊 SYSTEM DASHBOARD
-
-<br>
+## ── ⚡ THE MISSION Brief
+Built for the **Flipkart Gridlock Hackathon 2.0**, **ENIGMA** (codename *Vigilance AI*) is a high-fidelity, autonomous traffic violation detection and evidence-logging command center. The system processes live, high-resolution streams to identify seven critical violation classes, execute license plate OCR, query registration records, and compile cryptographically signed, court-admissible evidence PDFs—all with an edge-optimized latency of **< 120ms per frame**.
 
 ---
 
-## ⚡ SYSTEM SPECS
+## ── 👥 THE TEAM ENIGMA
+We are **Team Enigma**, representing the **National Institute of Technology Agartala**.
 
-| ⏱️ **120ms** | 👁️ **97.2%** | 🎯 **<4.8%** | ⚡ **99.99%** |
-|:---:|:---:|:---:|:---:|
-| Inference Latency | OCR Accuracy (Day) | False Positive Rate | Uptime Target |
+| Team Member | Role | Core Focus | GitHub / Contact |
+| :--- | :--- | :--- | :--- |
+| 🛡️ **Aditya Priyadarshi** | CV & Full Stack Lead | Pipeline Integration & Backend Architecture | [@PhaNtoM-GHosT-11101](https://github.com/PhaNtoM-GHosT-11101) |
+| 🧠 **Unnati Jangid** | ML & Data Pipeline | YOLOv8 Fine-tuning & Dataset Curation | NIT Agartala |
+| 🧱 **Gulshan Kumar** | Backend & Infra | SQLite Schema, File System & Server Ops | NIT Agartala |
+| 🎨 **Simran Singh** | UI/UX & Frontend | Neo-Swiss Brutalist Dashboard & Draggable ROI | NIT Agartala |
 
-| Metric | Value | Status |
-|:-------|:------|:-------|
-| ⏱️ **Inference Latency** | **~120ms** per frame (GPU A100 / T4) | ✅ Verified |
-| 👁️ **OCR Accuracy** | **97.2%** (Daylight) / **94.1%** (Low-light) | ✅ Verified |
-| 🎯 **False Positive Rate** | **< 4.8%** | ✅ Target ≤ 5% |
-| ⚡ **Uptime Target** | **99.99%** | ✅ Real-time |
-| 🧠 **Core Detection** | YOLOv8-L (Fine-tuned, 40,000+ annotations) | ✅ Active |
-| 🔐 **Evidence Chain** | HMAC-SHA256 digital signature | ✅ Active |
-| 📦 **Framework** | FastAPI + Uvicorn + SQLite | ✅ Active |
-| 🧪 **Tests** | 82 E2E checks (Playwright + Pytest) | ✅ Active |
+---
 
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 🏗️ SYSTEM ARCHITECTURE
-
-<p align="center">
-  <strong><code>STREAM 🎥 → BACKEND ⚙️ → PIPELINE 🔬 → OCR 📜 → EVIDENCE 🔐 → DASHBOARD 🖥️</code></strong>
-</p>
-
-<pre align="center">
-                                                      ╔══════════════════════════════╗
-                                                      ║     🎥 CCTV CAMERA STREAM    ║
-                                                      ╚══════════════════╤═══════════╝
-                                                                       │
-                                                                       ▼
-                                                      ╔══════════════════════════════╗
-                                                      ║     ⚙️ FASTAPI BACKEND       ║
-                                                      ║     (backend/main.py)        ║
-                                                      ╚══════════════╤═══════════════╝
-                                                                       │
-                                      ┌────────────────────────────────┼────────────────────────────────┐
-                                      │                                │                                │
-                                      ▼                                ▼                                ▼
-                      ┌──────────────────────────────┐   ┌──────────────────────────┐   ┌──────────────────────────┐
-                      │   🔬 7-STAGE CV PIPELINE      │   │   🗄️ DATABASE LAYER       │   │   📄 PDF EVIDENCE ENGINE │
-                      │   (backend/pipeline.py)        │   │   (backend/database.py)   │   │   (backend/pdf_gen.py)    │
-                      └──────────────┬───────────────┘   └──────────────────────────┘   └──────────────────────────┘
-                                     │
-        ┌────────────────────────────┼────────────────────────────┐
-        │                            │                            │
-        ▼                            ▼                            ▼
-┌──────────────────┐   ┌──────────────────────────┐   ┌──────────────────────────────┐
-│  🖥️ FRONTEND     │   │   📊 NEO-SWISS DASHBOARD  │   │   🔐 EVIDENCE MODAL          │
-│  index.html      │   │   Brutalist Editorial UI  │   │   HMAC-SHA256 Signed Docket  │
-└──────────────────┘   └──────────────────────────┘   └──────────────────────────────┘
-</pre>
-
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 🔬 THE 7-STAGE CV PIPELINE
+## ── 📊 SYSTEM SPECIFICATIONS
 
 ```
-⚡ STAGE 1 — INGEST        ████████████████████████████████████████  Capture & normalize camera streams
-⚡ STAGE 2 — CLAHE         ████████████████████████████████████████  Contrast-Limited Adaptive Histogram Equalization + deblur
-⚡ STAGE 3 — YOLOv8-L      ████████████████████████████████████████  Vehicle, Rider, Pedestrian detection
-⚡ STAGE 4 — CROP & EXTRACT ████████████████████████████████████████  Isolate plates, heads, torsos
-⚡ STAGE 5 — POSE & FACES   ████████████████████████████████████████  Keypoint estimation for helmet + seatbelt
-⚡ STAGE 6 — VIOLATIONS     ████████████████████████████████████████  7-class violation engine
-⚡ STAGE 7 — OCR & REPORT   ████████████████████████████████████████  Super-res OCR → VAHAN → Signed PDF
+⚡ LATENCY          ████████████████████████████████████████  ~120ms / frame
+⚡ OCR ACCURACY     ██████████████████████████████████████░░  97.2% Daylight
+⚡ FPR               ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  < 4.8% (Target < 5%)
+⚡ SERVICE UPTIME    ████████████████████████████████████████  99.99% Uptime
 ```
 
-<br>
+| Metric | Performance | Tech Stack / Engine | Verification |
+| :--- | :--- | :--- | :--- |
+| **Inference Time** | **~120ms** | GPU-accelerated YOLOv8-L | Real-time Benchmarks |
+| **OCR Accuracy** | **97.2%** Day / **94.1%** Night | PaddleOCR + EasyOCR Super-Res | Test Dataset Passes |
+| **False Positive Rate** | **< 4.8%** | Multi-frame overlap verification | Staged Validation |
+| **Evidence Security** | **HMAC-SHA256** | SHA-256 digital signature chains | Cryptographic Signatures |
+| **Test Coverage** | **82 E2E Checks** | Playwright + Pytest framework | Local E2E Suite Passes |
+
+---
+
+## ── 🏗️ ARCHITECTURE FLOW
+
+```
+                          ┌──────────────────────────┐
+                          │  🎥 LIVE CAM CHANNELS    │
+                          └─────────────┬────────────┘
+                                        │ (H.264 Stream)
+                                        ▼
+                          ┌──────────────────────────┐
+                          │  ⚙️ FastAPI Web Server    │
+                          │     (backend/main.py)    │
+                          └─────────────┬────────────┘
+                                        │
+             ┌──────────────────────────┼──────────────────────────┐
+             ▼                          ▼                          ▼
+┌──────────────────────────┐  ┌──────────────────┐  ┌──────────────────────────┐
+│  🔬 7-Stage CV Pipeline   │  │ 🗄️ Database Layer │  │ 📄 PDF Evidence Engine   │
+│  (backend/pipeline.py)   │  │  (SQLite Engine)  │  │ (backend/pdf_generator.py)│
+└────────────┬─────────────┘  └──────────────────┘  └──────────────────────────┘
+             │ (Predictions & crops)
+             ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                      📊 NEO-SWISS BRUTALIST DASHBOARD                   │
+│             (Vanilla JS + GSAP animations + Custom Canvas Rendering)     │
+├────────────────────────────────────────────────────────────────────────┤
+│  ⚡ CAM-04B vs CAM-12A switcher | 📐 Draggable ROI line & Lane dividers │
+│  🔡 Live plate OCR character cycling | 📂 Signed Court-Admissible Docket │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ── 🔬 THE 7-STAGE PIPELINE
+
+```
+[STAGE 1 Ingest]   ──> Capture live streams, normalize resolutions
+[STAGE 2 Prep]     ──> Deblur frame + Apply CLAHE (Contrast-Limited Adaptive Histogram Equalization)
+[STAGE 3 Detect]   ──> YOLOv8-L multi-object detection (vehicles, riders, helmets, plates)
+[STAGE 4 Crop]     ──> High-res cropping of plates, heads, and passenger coordinates
+[STAGE 5 Keypoint] ──> Pose estimation (MobileNetV3 torso/head keypoint alignment)
+[STAGE 6 Violate]  ──> 7-class heuristic evaluation (coordinates, ROI borders, overlaps)
+[STAGE 7 Evidence] ──> OCR + VAHAN registration query + Cryptographic docket PDF issue
+```
 
 <details>
-<summary><strong>🔍 DEEP DIVE — Stage 6: Violation Engine</strong></summary>
+<summary><b>🔍 DEEP DIVE: The 7 Violation Rules</b></summary>
 <br>
 
-| # | Violation | Method | Detection Logic | Confidence |
-|:-:|:----------|:-------|:----------------|:----------:|
-| 1 | 🪖 **Helmet Non-Compliance** | MobileNetV3 classifier | Head-crop classification → confidence threshold | **97%** |
-| 2 | 🔗 **Seatbelt Violation** | Pose diagonal detection | Torso keypoint line intersection with belt zone | **94%** |
-| 3 | 🛵 **Triple Riding** | Centroid overlap | Rider + 2+ passenger bounding box centroid proximity | **92%** |
-| 4 | ↩️ **Wrong-Side Driving** | Homography vectors | Coordinate vector direction vs lane orientation | **95%** |
-| 5 | 🛑 **Stop-Line Violation** | Axle-Y boundary | Axle overlap of configurable Y-axis threshold line | **96%** |
-| 6 | 🔴 **Red-Light Running** | Signal ROI entry | Vehicle entry during signal ROI red phase | **93%** |
-| 7 | 🚫 **Illegal Parking** | Optical flow | Stationary duration exceeding parking threshold | **88%** |
+1. 🪖 **No Helmet**: YOLOv8 extracts rider crop. A binary classifier validates helmet compliance at 97% confidence.
+2. 🔗 **No Seatbelt**: Pose estimator tracks passenger shoulder-to-hip diagonal. Generates alert if diagonal intersection with seatbelt area is missing.
+3. 🛵 **Triple Riding**: Tracks vehicle centroid. Flags alert when motorcycle bounding box overlaps with three or more distinct passenger centroids.
+4. ↩️ **Wrong-Side**: Maps vehicle trajectory vectors. Triggers alert if homography vectors move against lane direction.
+5. 🛑 **Stop-Line**: Monitors the red stop line. Flags alert if front axle coordinate crosses the custom Stop-Line threshold.
+6. 🔴 **Red-Light**: Checks traffic light signal ROI. Flags any vehicle entering the intersection box during red signal phase.
+7. 🚫 **Illegal Parking**: Optical flow calculates stationary status. Triggers ticket if vehicle remains stationary in a restricted zone for > 30s.
 
 </details>
 
-<br>
+---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
+## ── 🎨 PREMIUM NEO-SWISS BRUTALIST DESIGN
+We discarded boring corporate templates in favor of a striking **Neo-Swiss Brutalist / Editorial Print** aesthetic:
+* **Bold Palette**: Off-white paper (`#F0EDE5`), deep typography ink (`#100C0A`), alarm red (`#CC1100`), and warning yellow (`#F5C518`).
+* **Visual Typography**: Heavy condensed `Barlow Condensed` headers paired with sharp, precise monospaced `DM Mono` telemetry readouts.
+* **Micro-interactions**: Hover expansions, custom pointer crosshairs, GSAP-driven laser sweeps, and Web Audio synthesizer warnings.
+* **Boot Sequence**: A detailed mock terminal boot sequence that tests UI elements and assets before unlocking the portal.
 
-## 🎨 DESIGN SYSTEM — NEO-SWISS BRUTALIST
+---
 
-> *"Where editorial print meets surveillance command centers."*
-
-<p align="center">
-  <strong><code>"THE DASHBOARD IS THE PRODUCT"</code></strong><br>
-  <strong><code>CREAM PAPER · DEEP INK · ALARM RED · WARNING YELLOW</code></strong><br>
-  <strong><code>NEVER DARK MODE. ALWAYS EDITORIAL.</code></strong>
-</p>
-
-### 🎭 Color Palette
-
-```css
---paper:      #F0EDE5;   /* Off-white cream paper */
---ink:        #100C0A;   /* Deep ink typography */
---alarm:      #CC1100;   /* Warning red accents */
---caution:    #F5C518;   /* Warning yellow highlights */
-```
-
-### 🔤 Typography Stack
-
-| Element | Font | Weight |
-|:--------|:-----|:-------|
-| **Headings** | `Barlow Condensed` | Heavy, condensed |
-| **Body** | `Inter` | Clean, modern |
-| **Code** | `DM Mono` | Monospaced precision |
-
-### ⚡ Interaction Design
-
-- **Cursor**: Custom crosshair state scaling on interactive elements
-- **Scan Animation**: GSAP laser sweeping synchronized with bounding box flashes
-- **ROI Controls**: Draggable stop-line Y & lane-divider X overlays (bi-directional with inputs)
-- **Comparison Slider**: Live canvas-rendered before/after view
-- **Metrics**: Real-time count-up animations (accuracy, latency, classes, scalability)
-- **Evidence Modal**: Monospace court-admissible docket with SHA-256 signature
-- **Audio**: Web Audio Synthesizer chirps & alarms on violation triggers
-- **Splash Screen**: Animated boot sequence with progress bar
-
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 🚀 GETTING STARTED
-
-<p align="center">
-  <strong><code>3 COMMANDS. ZERO FUSS.</code></strong><br>
-  <strong><code>DEPLOY IN UNDER 60 SECONDS</code></strong>
-</p>
+## ── 🚀 GETTING STARTED IN 60 SECONDS
 
 ### 📋 Prerequisites
-
-- Python 3.10+
-- pip package manager
+* Python 3.10 or higher
+* Google Chrome (for Playwright E2E testing)
 
 ### 💾 Installation
 
 ```bash
-# Clone the fortress
-git clone https://github.com/PhaNtoM-GHosT-11101/enigma-gridlock.git
-cd enigma-gridlock
+# Clone the repository
+git clone https://github.com/PhaNtoM-GHosT-11101/enigma-traffic-ai.git
+cd enigma-traffic-ai
 
-# Install artillery
+# Install backend dependencies
 pip install -r backend/requirements.txt
 ```
 
-### 🎯 Launch
+### 🏁 Spin Up the Portal
 
+Simply launch the included portable startup script:
 ```bash
-# Deploy the command center
+chmod +x start_server.sh
 ./start_server.sh
 ```
-
-*Or manually:*
+*Or run manually:*
 ```bash
 uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
 ```
+Open **[http://localhost:8000](http://localhost:8000)** in your browser.
 
-Then open **http://localhost:8000** in your browser. 
+---
 
-<br>
+## ── 🧪 STABLE PLAYWRIGHT TEST SUITE
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 🧪 TESTING — 82 E2E CHECKS
-
-<p align="center">
-  <strong><code>PLAYWRIGHT + PYTEST = 🔥</code></strong><br>
-  <strong><code>EVERY COMMIT. EVERY EDGE CASE.</code></strong>
-</p>
+The command center comes with a rigorous suite of **82 automated E2E and functional tests** validating layout alignment, draggable inputs, API endpoints, and crash recoveries.
 
 ```bash
+# Run tests
 pytest -s -v tests/test_dashboard.py
 ```
 
-| Tier | Checks | Coverage |
-|:----:|:------:|:---------|
-| 🥇 | **01–25** | Typography, fonts, layout, pipeline elements, static visibility |
-| 🥈 | **26–45** | ROI drag-drop, slider updates, file validation, input config |
-| 🥉 | **46–65** | Loading states, progress bars, stats rows, PDF downloads |
-| 🏅 | **66–82** | Error toasts, server crash recoveries, empty payload scenarios |
+| Suite Tier | Checks | Validates |
+| :--- | :---: | :--- |
+| **Tier 1 (Core)** | 1 – 25 | Typography, CSS assets, fonts, base layouts, camera switches |
+| **Tier 2 (Interactive)** | 26 – 45 | Draggable ROI, calibration sliders, double-bind updates |
+| **Tier 3 (Logic & PDF)** | 46 – 65 | Progress bar, evidence modal generation, crop positions, PDF downloads |
+| **Tier 4 (Edge & Failure)** | 66 – 82 | API error codes, offline mode, client-side fallback triggers |
 
-<br>
+---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
+## ── 💻 THE TECH MATRIX
 
-## 🛠️ TECH STACK
+* **Backend**: FastAPI (Python), Uvicorn, SQLite
+* **Computer Vision**: YOLOv8-L, YOLOv8-Pose, PaddleOCR, EasyOCR, OpenCV, MobileNetV3
+* **Frontend**: HTML5, Vanilla ES6 Javascript, GreenSock GSAP (Animations), Web Audio API
+* **Testing**: Pytest, Playwright (E2E browser automation)
 
-<p align="center">
-  <strong><code>POWERED BY THE BEST</code></strong><br>
-  <strong><code>MODERN AI + MODERN WEB + ZERO BLOAT</code></strong>
-</p>
+---
 
-<br>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/YOLOv8-00FFFF?style=for-the-badge&logo=yolo&logoColor=black&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/PaddleOCR-FF6F00?style=for-the-badge&logo=paddlepaddle&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/Uvicorn-2A6A3A?style=for-the-badge&logo=uvicorn&logoColor=white&labelColor=1a1a2e"/>
-  <img src="https://img.shields.io/badge/fpdf2-FF6F00?style=for-the-badge&logo=adobe&logoColor=white&labelColor=1a1a2e"/>
-</p>
-
-<br>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=4&section=header" width="100%"/>
-</p>
-
-## 📂 PROJECT STRUCTURE
-
-<p align="center">
-  <strong><code>KNOW YOUR CODEBASE</code></strong><br>
-  <strong><code>CLEAN. MODULAR. MEAN.</code></strong>
-</p>
+## ── 📂 PORTABLE REPOSITORY TREE
 
 ```
-📦 enigma-gridlock
-├── 📄 README.md                    # You are here 🫵
-├── 📄 start_server.sh              # Launch script
-├── 📄 .gitignore                   # Git exclusion rules
+📦 enigma-traffic-ai
+├── 📄 README.md                    # This gorgeous guide
+├── 📄 start_server.sh              # Unified server trigger script
+├── 📄 .gitignore                   # Keeps repository clean of caches/venv
 ├── 📁 backend/
-│   ├── 📄 main.py                  # FastAPI entry point
-│   ├── 📄 pipeline.py              # 7-stage CV pipeline
-│   ├── 📄 database.py              # SQLite data layer
-│   ├── 📄 pdf_generator.py         # PDF evidence engine
-│   ├── 📄 requirements.txt         # Python deps
-│   ├── 📦 yolov8n.pt              # Object detection model
-│   ├── 📦 yolov8n-pose.pt         # Pose estimation model
-│   └── 📦 helmet_yolo_base.pt     # Helmet classifier
+│   ├── 📄 main.py                  # FastAPI core server & API endpoints
+│   ├── 📄 pipeline.py              # The 7-Stage computer vision engine
+│   ├── 📄 database.py              # SQLite infraction database layer
+│   ├── 📄 pdf_generator.py         # Monospace PDF ticket compiler
+│   ├── 📄 requirements.txt         # Package dependencies
+│   ├── 📦 yolov8n.pt              # Standard detection model weights
+│   ├── 📦 yolov8n-pose.pt         # Passenger pose model weights
+│   └── 📦 helmet_yolo_base.pt     # Rider/Helmet classification model
 ├── 📁 frontend/
-│   ├── 📄 index.html               # Neo-Swiss Brutalist UI
-│   ├── 🖼️ traffic.png              # Analysis Lab asset
-│   └── 🖼️ cctv_feed.png            # Hero section asset
+│   ├── 📄 index.html               # Main Swiss Brutalist portal
+│   ├── 🖼️ traffic.png              # Daylight analysis camera asset
+│   └── 🖼️ cctv_feed.png            # Night traffic camera asset
 └── 📁 tests/
-    └── 📄 test_dashboard.py        # 82 E2E Playwright tests
+    └── 📄 test_dashboard.py        # 82 functional E2E test scripts
 ```
-
-<br>
 
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=shark&color=gradient&height=150&section=footer&text=ENIGMA%20%E2%80%94%20Order%20on%20the%20roads&fontSize=28&fontAlignY=60&animation=twinkling" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=shark&color=100C0A&height=120&section=footer&text=ENIGMA%20AI%20%E2%80%A2%20SAFETY%20FIRST&fontSize=25&fontAlignY=55" width="100%"/>
 </p>
 
 <p align="center">
-  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-gridlock">
-    <img src="https://img.shields.io/badge/View%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
-  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-gridlock/issues">
-    <img src="https://img.shields.io/badge/Report%20Bug-CC1100?style=for-the-badge&logo=bug&logoColor=white"/>
-  </a>
-  <a href="https://github.com/PhaNtoM-GHosT-11101/enigma-gridlock/fork">
-    <img src="https://img.shields.io/badge/Fork%20Repo-2979FF?style=for-the-badge&logo=git&logoColor=white"/>
-  </a>
-</p>
-
-<p align="center">
-  <sub>Built with ☕ & 🔥 by <strong>Team Enigma</strong> · Gridlock Hackathon 2.0 · Flipkart</sub>
-  <br>
-  <sub>📍 National Institute of Technology Agartala</sub>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2&section=footer" width="60%"/>
+  <sub>Designed with 🛠️ and ☕ by <b>Team Enigma</b></sub><br>
+  <sub><b>NIT Agartala</b> • Flipkart Gridlock Hackathon 2.0</sub>
 </p>
